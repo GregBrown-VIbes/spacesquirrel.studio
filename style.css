@@ -20,7 +20,8 @@ a:hover{color:var(--ink)}
 /* header */
 .site-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.25rem 0}
 .wordmark{font:800 1.5rem/1 var(--display);letter-spacing:-.02em;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:.55rem}
-.wordmark svg{width:34px;height:34px}
+.wordmark img{height:30px;width:auto;display:block}
+@media (max-width:620px){.site-head{flex-direction:column;align-items:flex-start;gap:.9rem}.wordmark img{height:auto;width:min(100%,340px)}.site-nav{gap:.35rem 1rem;font-size:1rem}}
 .site-nav{display:flex;gap:1.4rem;flex-wrap:wrap}
 .site-nav a{color:var(--ink);text-decoration:none;font-weight:700}
 .site-nav a:hover,.site-nav a[aria-current]{text-decoration:underline;text-decoration-thickness:3px;text-decoration-color:var(--acorn)}
