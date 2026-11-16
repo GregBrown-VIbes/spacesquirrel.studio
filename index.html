@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Space Squirrel — tools that make you smile</title>
+<meta name="description" content="Kneady for Blender: hover any part of your model and drag to shape it. Free, with Kneady Pro for riggers and studios.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Kneady — shape anything in Blender by grabbing it">
+<meta property="og:description" content="Hover any part of your model and drag to shape it. Free on extensions.blender.org.">
+<meta property="og:url" content="https://spacesquirrel.studio/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,600..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site-head">
+    <a class="wordmark" href="/"><img src="mark.svg" alt="" width="34" height="34">Space Squirrel</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#kneady">Kneady</a>
+      <a href="#pricing">Free &amp; Pro</a>
+      <a href="support.html">Support</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <h1 id="hero-title">Shape anything in Blender by grabbing it.</h1>
+        <p class="lede">Kneady turns any surface into controls. Hover a part of your model, drag, and it bends, moves or changes. No hunting through panels.</p>
+        <div class="actions">
+          <!-- TODO: link to the Kneady page on extensions.blender.org -->
+          <a class="btn btn-main" href="#pricing">Get Kneady free</a>
+          <a class="btn btn-quiet" href="#kneady">Watch the demo</a>
+        </div>
+      </div>
+      <div class="clay-stage" role="img" aria-label="A lump of clay you can drag to reshape">
+        <svg viewBox="0 0 500 500" aria-hidden="true">
+          <defs>
+            <radialGradient id="clayLight" cx="0.4" cy="0.35" r="0.85">
+              <stop id="glowStop" offset="0" stop-color="#E7987A"/>
+              <stop offset="0.5" stop-color="#B9573A"/>
+              <stop offset="1" stop-color="#93452D"/>
+            </radialGradient>
+          </defs>
+          <ellipse cx="250" cy="438" rx="150" ry="16" fill="#1C2440" opacity=".14"/>
+          <path id="clay" fill="url(#clayLight)" stroke="#1C2440" stroke-width="4"/>
+        </svg>
+        <span class="clay-hint">Go on, pull it</span>
+      </div>
+    </section>
+
+    <section id="kneady" aria-labelledby="kneady-title">
+      <div class="band">
+        <h2 id="kneady-title">Hover, drag, done.</h2>
+        <p class="lede">Kneady puts the controls on the model itself, right where your eyes already are.</p>
+        <!-- TODO: replace VIDEO_ID with the demo video's YouTube ID -->
+        <iframe class="video" src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Kneady demo" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="does">
+          <div>
+            <h3>Hover a part</h3>
+            <p>Controls appear on the surface you're pointing at, and nowhere else.</p>
+          </div>
+          <div>
+            <h3>Drag any direction</h3>
+            <p>Each direction can do something different. Hold Alt mid-drag to switch, and the whole move undoes in one step.</p>
+          </div>
+          <div>
+            <h3>Drive anything</h3>
+            <p>Bones, modifier inputs, any property. A posing tool for animators, a configurator for designers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" aria-labelledby="pricing-title">
+      <h2 id="pricing-title">Free does it all. Pro does it faster.</h2>
+      <p class="lede">Kneady is a complete tool for free. Pro is for riggers and studios who set it up again and again.</p>
+      <div class="tiers">
+        <div class="tier">
+          <h3>Kneady</h3>
+          <p class="price">Free</p>
+          <ul>
+            <li>Regions and buttons on any mesh</li>
+            <li>Drag commands for bones, modifier inputs and any property</li>
+            <li>Menus, pinning and handles in 3D</li>
+            <li>Plays everything made in Kneady Pro</li>
+            <li>Blender 4.2 and later</li>
+          </ul>
+          <!-- TODO: link to the Kneady page on extensions.blender.org -->
+          <a class="btn btn-main" href="#">Get it on extensions.blender.org</a>
+        </div>
+        <div class="tier tier-pro">
+          <h3>Kneady Pro</h3>
+          <p class="price">On Superhive</p>
+          <ul>
+            <li>Rigify and Auto-Rig Pro templates: a full set of controls in one click</li>
+            <li>Regions straight from selected bones</li>
+            <li>Mirror regions left to right</li>
+            <li>Region maps you can save, share and attach to any copy of a rig</li>
+            <li>A channel box for every value a region drives</li>
+            <li>Keying helpers</li>
+            <li>Early access to new features, starting with forms</li>
+          </ul>
+          <!-- TODO: link to the Kneady Pro listing on Superhive -->
+          <a class="btn btn-main" href="#">Get Kneady Pro</a>
+        </div>
+      </div>
+      <p class="fineprint">Anything you build in Pro works in the free Kneady, so you can share your rigs with anyone.</p>
+    </section>
+
+    <section id="about" aria-labelledby="about-title">
+      <div class="band about">
+        <!-- TODO: replace with a photo: <img class="portrait" src="greg.jpg" alt="Greg Brown"> -->
+        <div class="portrait" aria-hidden="true">GB</div>
+        <div>
+          <h2 id="about-title">Hi, I'm Greg.</h2>
+          <p>I've spent over 17 years in 3D software, 12 of them at Foundry as a CG generalist, demo artist and technical evangelist, designer, and product manager for Modo.</p>
+          <p>Space Squirrel is where I make the tools I wish I'd had: quick to pick up, deep when you need them, and a bit of fun to use.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="signup" aria-labelledby="signup-title">
+      <h2 id="signup-title">Hear about new tools first.</h2>
+      <p class="lede">New releases, betas and the occasional work in progress. A few emails a month at most.</p>
+      <!-- TODO: point action at the mailing-list service (e.g. Buttondown's embed-subscribe URL) -->
+      <form action="#" method="post">
+        <label for="email">Email address</label>
+        <input id="email" type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+        <button class="btn btn-main" type="submit">Subscribe</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <span>© 2026 Space Squirrel</span>
+    <nav aria-label="Elsewhere">
+      <!-- TODO: YouTube channel URL -->
+      <a href="#">YouTube</a>
+      <a href="https://discord.gg/cDD3acK6bM">Discord</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </footer>
+</div>
+<script src="clay.js"></script>
+</body>
+</html>
