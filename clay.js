@@ -10,36 +10,53 @@
   const hint = stage.querySelector('.clay-hint');
   const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  const N = 72, CX = 250, CY = 235, R = 120;
+  const N = 80, CX = 250, CY = 235, R = 120;   // 80 samples: star tips, notches and square corners all land on one
   const TAU = Math.PI * 2;
-  // each shape is a radius for every angle, so any two can be blended
+  const ang = i => (i / N) * TAU - Math.PI / 2;
+  // radius where a ray from the centre meets a closed polygon
+  function polyR(poly) {
+    return a => {
+      const dx = Math.cos(a), dy = Math.sin(a); let best = Infinity;
+      for (let i = 0; i < poly.length; i++) {
+        const [x1, y1] = poly[i], [x2, y2] = poly[(i + 1) % poly.length];
+        const ex = x2 - x1, ey = y2 - y1, den = dx * ey - dy * ex;
+        if (Math.abs(den) < 1e-9) continue;
+        const t = (x1 * ey - y1 * ex) / den, u = (x1 * dy - y1 * dx) / den;
+        if (t > 0 && u >= -1e-9 && u <= 1 + 1e-9) best = Math.min(best, t);
+      }
+      return best;
+    };
+  }
+  const starPoly = Array.from({ length: 10 }, (_, k) => { const a = -Math.PI / 2 + k * Math.PI / 5, r = k % 2 ? R * 0.5 : R * 1.22; return [Math.cos(a) * r, Math.sin(a) * r]; });
+  const sq = R * 0.86, squarePoly = [[-sq, -sq], [sq, -sq], [sq, sq], [-sq, sq]];
+  // smooth: 1 draws flowing curves, 0 draws straight edges and sharp corners
   const shapes = [
-    { name: 'lump',    r: a => R * (1 + 0.07 * Math.sin(a * 3 + 0.6) + 0.04 * Math.cos(a * 5)) },
-    { name: 'block',   r: a => { const n = 5, c = Math.abs(Math.cos(a)), s = Math.abs(Math.sin(a)); return R * 0.95 / Math.pow(Math.pow(c, n) + Math.pow(s, n), 1 / n); } },
-    { name: 'star',    r: a => R * (0.82 + 0.26 * Math.cos(a * 5 - Math.PI / 2)) },
-    { name: 'capsule', r: a => { const c = Math.abs(Math.cos(a)), s = Math.abs(Math.sin(a)); return R * 0.8 / Math.pow(Math.pow(c / 1.25, 4) + Math.pow(s / 0.85, 4), 0.25); } },
+    { name: 'lump',   smooth: 1, r: a => R * (1 + 0.07 * Math.sin(a * 3 + 0.6) + 0.04 * Math.cos(a * 5)) },
+    { name: 'square', smooth: 0, r: polyR(squarePoly) },
+    { name: 'circle', smooth: 1, r: () => R * 0.98 },
+    { name: 'star',   smooth: 0, r: polyR(starPoly) },
   ];
-  const sample = s => Array.from({ length: N }, (_, i) => s.r((i / N) * TAU - Math.PI / 2));
-  let shapeIdx = 0, radii = sample(shapes[0]);
+  const sample = sh => Array.from({ length: N }, (_, i) => sh.r(ang(i)));
+  let shapeIdx = 0, radii = sample(shapes[0]), smooth = 1;
   let sx = 1, sy = 1;
 
   function pts(rs, w, h, cx = CX, cy = CY) {
-    return rs.map((r, i) => { const a = (i / N) * TAU - Math.PI / 2; return [cx + Math.cos(a) * r * w, cy + Math.sin(a) * r * h]; });
+    return rs.map((r, i) => { const a = ang(i); return [cx + Math.cos(a) * r * w, cy + Math.sin(a) * r * h]; });
   }
-  function pathFrom(P) {
+  function pathFrom(P, k = 1) {
     let d = '';
     for (let i = 0; i < N; i++) {
       const p0 = P[(i - 1 + N) % N], p1 = P[i], p2 = P[(i + 1) % N], p3 = P[(i + 2) % N];
       if (i === 0) d += `M${p1[0].toFixed(1)},${p1[1].toFixed(1)}`;
-      d += `C${(p1[0] + (p2[0] - p0[0]) / 6).toFixed(1)},${(p1[1] + (p2[1] - p0[1]) / 6).toFixed(1)} ${(p2[0] - (p3[0] - p1[0]) / 6).toFixed(1)},${(p2[1] - (p3[1] - p1[1]) / 6).toFixed(1)} ${p2[0].toFixed(1)},${p2[1].toFixed(1)}`;
+      d += `C${(p1[0] + (p2[0] - p0[0]) * k / 6).toFixed(1)},${(p1[1] + (p2[1] - p0[1]) * k / 6).toFixed(1)} ${(p2[0] - (p3[0] - p1[0]) * k / 6).toFixed(1)},${(p2[1] - (p3[1] - p1[1]) * k / 6).toFixed(1)} ${p2[0].toFixed(1)},${p2[1].toFixed(1)}`;
     }
     return d + 'Z';
   }
-  function draw() { clay.setAttribute('d', pathFrom(pts(radii, sx, sy))); }
+  function draw() { clay.setAttribute('d', pathFrom(pts(radii, sx, sy), smooth)); clay.setAttribute('stroke-linejoin', smooth < 0.5 ? 'miter' : 'round'); }
   // the button previews the shape you'll get next
   function drawIcon() {
-    const next = sample(shapes[(shapeIdx + 1) % shapes.length]);
-    btnIcon.setAttribute('d', pathFrom(pts(next, 0.085, 0.085, 0, 0)));
+    const nx = shapes[(shapeIdx + 1) % shapes.length];
+    btnIcon.setAttribute('d', pathFrom(pts(sample(nx), 0.12, 0.12, 0, 0), nx.smooth));
   }
 
   // ----- hover state -----
@@ -76,17 +93,19 @@
   stage.addEventListener('pointerleave', () => { if (!drag) hideTimer = setTimeout(() => setActive(false), 120); });
 
   stage.addEventListener('pointerdown', e => {
-    if (btn.contains(e.target)) return;           // the button handles its own click
-    if (e.target !== clay) { if (e.pointerType !== 'mouse') setActive(false); return; }
+    const onBtn = btn.contains(e.target);
+    if (!onBtn && e.target !== clay) { if (e.pointerType !== 'mouse') setActive(false); return; }
     if (e.pointerType !== 'mouse' && !active) { touched = true; setActive(true); }
     const m = toSvg(e);
-    drag = { x: m.x, y: m.y, sx, sy, axis: null };
+    drag = { x: m.x, y: m.y, sx, sy, axis: null, onBtn };
     stage.setPointerCapture(e.pointerId);
     stage.classList.add('is-dragging');
   });
   function endDrag(e) {
     if (!drag) return;
+    const clicked = drag.onBtn && !drag.axis && e && e.type === 'pointerup';
     drag = null; stage.dataset.axis = '';
+    if (clicked) nextShape();
     stage.classList.remove('is-dragging');
     if (e && e.pointerType === 'mouse') setActive(overClay(e));
   }
@@ -96,23 +115,21 @@
   // ----- the button: morph to the next shape -----
   let anim = 0;
   function nextShape() {
-    const from = radii.slice();
+    const from = radii.slice(), fromSmooth = smooth;
     shapeIdx = (shapeIdx + 1) % shapes.length;
-    const to = sample(shapes[shapeIdx]);
+    const to = sample(shapes[shapeIdx]), toSmooth = shapes[shapeIdx].smooth;
     drawIcon();
     cancelAnimationFrame(anim);
-    if (still) { radii = to; draw(); return; }
+    if (still) { radii = to; smooth = toSmooth; draw(); return; }
     const t0 = performance.now(), dur = 380;
     const step = now => {
       const t = Math.min(1, (now - t0) / dur), k = 1 - Math.pow(1 - t, 3);
-      radii = from.map((r, i) => r + (to[i] - r) * k);
+      radii = from.map((r, i) => r + (to[i] - r) * k); smooth = fromSmooth + (toSmooth - fromSmooth) * k;
       draw();
       if (t < 1) anim = requestAnimationFrame(step);
     };
     anim = requestAnimationFrame(step);
   }
-  btn.addEventListener('pointerdown', e => { e.stopPropagation(); });
-  btn.addEventListener('click', e => { e.stopPropagation(); nextShape(); });
 
   // ----- keyboard: arrows resize, Enter or Space changes shape -----
   stage.addEventListener('focus', () => setActive(true));
