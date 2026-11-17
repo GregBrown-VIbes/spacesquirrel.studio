@@ -52,11 +52,39 @@
     }
     return d + 'Z';
   }
+  // ----- the palette: a ring of shape buttons around the main one -----
+  const NS = 'http://www.w3.org/2000/svg';
+  const palette = document.createElementNS(NS, 'g');
+  palette.setAttribute('id', 'clayPalette');
+  svg.appendChild(palette);
+  const RING = 84;
+  const ringBtns = shapes.map((sh, i) => {
+    const a = -Math.PI / 2 + i * TAU / shapes.length;            // first at the top, then clockwise
+    const g = document.createElementNS(NS, 'g');
+    g.setAttribute('class', 'ring-btn');
+    g.setAttribute('role', 'button');
+    g.setAttribute('aria-label', sh.name);
+    g.style.setProperty('--tx', (Math.cos(a) * RING).toFixed(1) + 'px');
+    g.style.setProperty('--ty', (Math.sin(a) * RING).toFixed(1) + 'px');
+    const c = document.createElementNS(NS, 'circle'); c.setAttribute('r', 25);
+    const p = document.createElementNS(NS, 'path'); p.setAttribute('d', pathFrom(pts(sample(sh), 0.1, 0.1, 0, 0), sh.smooth));
+    g.append(c, p); palette.appendChild(g);
+    g.dataset.idx = i;
+    return g;
+  });
+  palette.setAttribute('transform', `translate(${CX},${CY})`);
+  let paletteOpen = false;
+  function setPalette(on) {
+    paletteOpen = on;
+    stage.classList.toggle('palette-open', on);
+    ringBtns.forEach((g, i) => g.classList.toggle('current', i === shapeIdx));
+  }
+
   function draw() { clay.setAttribute('d', pathFrom(pts(radii, sx, sy), smooth)); clay.setAttribute('stroke-linejoin', smooth < 0.5 ? 'miter' : 'round'); }
   // the button previews the shape you'll get next
   function drawIcon() {
-    const nx = shapes[(shapeIdx + 1) % shapes.length];
-    btnIcon.setAttribute('d', pathFrom(pts(sample(nx), 0.12, 0.12, 0, 0), nx.smooth));
+    const cur = shapes[shapeIdx];
+    btnIcon.setAttribute('d', pathFrom(pts(sample(cur), 0.12, 0.12, 0, 0), cur.smooth));
   }
 
   // ----- hover state -----
@@ -66,11 +94,12 @@
     if (on === active) return;
     active = on;
     stage.classList.toggle('is-active', on);
-    if (on && hint) hint.textContent = 'Drag sideways or up and down. Click the button to change shape.';
+    if (!on) setPalette(false);
+    if (on && hint) hint.textContent = 'Drag left/right or up/down to squash and stretch. Click the button to change base shape.';
   }
   function overClay(e) {
     const el = document.elementFromPoint(e.clientX, e.clientY);
-    return el === clay || btn.contains(el);
+    return el === clay || btn.contains(el) || (paletteOpen && palette.contains(el));
   }
 
   // ----- dragging: one direction per drag, like Kneady -----
@@ -94,29 +123,36 @@
 
   stage.addEventListener('pointerdown', e => {
     const onBtn = btn.contains(e.target);
-    if (!onBtn && e.target !== clay) { if (e.pointerType !== 'mouse') setActive(false); return; }
+    const ring = paletteOpen ? ringBtns.find(g => g.contains(e.target)) : null;
+    if (!onBtn && !ring && e.target !== clay) { if (e.pointerType !== 'mouse') setActive(false); else setPalette(false); return; }
     if (e.pointerType !== 'mouse' && !active) { touched = true; setActive(true); }
     const m = toSvg(e);
-    drag = { x: m.x, y: m.y, sx, sy, axis: null, onBtn };
+    drag = { x: m.x, y: m.y, sx, sy, axis: null, onBtn, ring: ring ? +ring.dataset.idx : -1 };
     stage.setPointerCapture(e.pointerId);
     stage.classList.add('is-dragging');
   });
   function endDrag(e) {
     if (!drag) return;
-    const clicked = drag.onBtn && !drag.axis && e && e.type === 'pointerup';
+    const tap = !drag.axis && e && e.type === 'pointerup';
+    const wasBtn = drag.onBtn, ringIdx = drag.ring;
     drag = null; stage.dataset.axis = '';
-    if (clicked) nextShape();
+    if (tap && wasBtn) setPalette(!paletteOpen);                       // the button opens its palette
+    else if (tap && ringIdx >= 0) { setShape(ringIdx); setPalette(false); }
+    else if (tap && paletteOpen) setPalette(false);                    // a click on the clay closes it
     stage.classList.remove('is-dragging');
-    if (e && e.pointerType === 'mouse') setActive(overClay(e));
+    // a pick from the palette keeps the clay selected; otherwise follow the mouse
+    if (e && e.pointerType === 'mouse' && !(tap && ringIdx >= 0)) setActive(overClay(e));
   }
   stage.addEventListener('pointerup', endDrag);
   stage.addEventListener('pointercancel', endDrag);
 
   // ----- the button: morph to the next shape -----
   let anim = 0;
-  function nextShape() {
+  function nextShape() { setShape((shapeIdx + 1) % shapes.length); }
+  function setShape(idx) {
     const from = radii.slice(), fromSmooth = smooth;
-    shapeIdx = (shapeIdx + 1) % shapes.length;
+    shapeIdx = idx;
+    ringBtns.forEach((g, i) => g.classList.toggle('current', i === shapeIdx));
     const to = sample(shapes[shapeIdx]), toSmooth = shapes[shapeIdx].smooth;
     drawIcon();
     cancelAnimationFrame(anim);
@@ -140,7 +176,9 @@
     else if (k === 'ArrowLeft') sx = clamp(sx / 1.08, 0.45, 1.75);
     else if (k === 'ArrowUp') sy = clamp(sy * 1.08, 0.45, 1.45);
     else if (k === 'ArrowDown') sy = clamp(sy / 1.08, 0.45, 1.45);
-    else if (k === 'Enter' || k === ' ') nextShape();
+    else if (k === 'Enter' || k === ' ') setPalette(!paletteOpen);
+    else if (k === 'Escape') setPalette(false);
+    else if (/^[1-4]$/.test(k)) { setShape(+k - 1); setPalette(false); }
     else used = false;
     if (used) { e.preventDefault(); draw(); }
   });
