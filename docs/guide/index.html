@@ -1,0 +1,908 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guide — Kneady Controls docs</title>
+<meta name="description" content="The Kneady Controls guide: regions, buttons, commands, dragging, posing, menus, 3D handles and more.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/style.css?v=943501">
+<script src="/docs/docs.js?v=943501" defer></script>
+</head>
+<body class="docs">
+<!-- Made by tools/build_docs.py from the Kneady repository. Edit the source and build again. -->
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header class="site-head">
+<a class="wordmark" href="/"><img alt="Space Squirrel" height="30" src="/brand/spacesquirrel_wordmark_white_terra.svg"/></a>
+<nav aria-label="Main" class="site-nav">
+<a class="product-link" href="/#kneady"><img alt="Kneady Controls" height="30" src="/brand/kneady_wordmark.svg"/></a>
+<a href="/#pricing">Free &amp; Pro</a>
+<a aria-current="true" href="/support.html">Support</a>
+<a href="/#about">About</a>
+</nav>
+</header>
+
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/support.html">Support</a> <span aria-hidden="true">/</span> <a href="/docs/">Docs</a> <span aria-hidden="true">/</span> <span aria-current="page">Guide</span></nav>
+  <main id="main">
+<header class="doc-head"><h1>Guide</h1><p class="lede">Everything Kneady does, in the order you meet it. Clips from the tutorials sit beside the parts they show.</p></header><div class="doc-layout"><nav class="toc" aria-label="Guide: contents"><p class="kicker">On this page</p><ol><li><a href="#turning-kneady-on">Turning Kneady on</a></li><li><a href="#regions">Regions</a><ol><li><a href="#which-faces">Which faces</a></li><li><a href="#faces-from-a-rig">Faces from a rig</a></li><li><a href="#how-it-looks">How it looks</a></li></ol></li><li><a href="#buttons">Buttons</a><ol><li><a href="#tips">Tips</a></li><li><a href="#toggles">Toggles</a></li><li><a href="#copy-and-paste">Copy and paste</a></li><li><a href="#viewport-edit">Viewport Edit</a></li></ol></li><li><a href="#commands">Commands</a></li><li><a href="#dragging">Dragging</a></li><li><a href="#posing-and-keying">Posing and keying</a></li><li><a href="#notes-for-common-rigs">Notes for common rigs</a></li><li><a href="#beyond-the-row-placed-buttons-3d-handles-and-menus">Beyond the row: placed buttons, 3D handles and menus</a></li><li><a href="#tutorials">Tutorials</a></li><li><a href="#files-copies-and-linked-characters">Files, copies and linked characters</a></li><li><a href="#modifiers">Modifiers</a></li><li><a href="#large-meshes">Large meshes</a></li><li><a href="#limits">Limits</a></li><li><a href="#troubleshooting">Troubleshooting</a></li></ol></nav><article class="doc-article"><div class="prose">
+<p>Kneady puts controls on the surface of a mesh. A <strong>region</strong> is some of a
+mesh's faces, or the whole object. Each region has <strong>buttons</strong>, and each
+button has <strong>commands</strong> that say what dragging up and down, or left and
+right, drives. You hover the mesh and drag the region.</p>
+<p>This guide covers each part in the order you meet it.</p>
+<ul>
+<li><a href="#turning-kneady-on">Turning Kneady on</a></li>
+<li><a href="#regions">Regions</a></li>
+<li><a href="#buttons">Buttons</a></li>
+<li><a href="#commands">Commands</a></li>
+<li><a href="#dragging">Dragging</a></li>
+<li><a href="#posing-and-keying">Posing and keying</a></li>
+<li><a href="#notes-for-common-rigs">Notes for common rigs</a></li>
+<li><a href="#beyond-the-row-placed-buttons-3d-handles-and-menus">Beyond the row: placed buttons, 3D handles and menus</a></li>
+<li><a href="#tutorials">Tutorials</a></li>
+<li><a href="#files-copies-and-linked-characters">Files, copies and linked characters</a></li>
+<li><a href="#modifiers">Modifiers</a></li>
+<li><a href="#large-meshes">Large meshes</a></li>
+<li><a href="#limits">Limits</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+<h2 id="turning-kneady-on">Turning Kneady on</h2>
+<p>Kneady lives in the 3D viewport's sidebar (N), on its own <strong>Kneady</strong> tab.
+The <strong>Kneady</strong> button at the top of the tab turns it on and off, and so
+does the icon at the right of the viewport header. While it is on, Kneady
+works in Object mode and in Pose mode.</p>
+<p><strong>Help</strong>, beside it, sets how much Kneady tells you as you work:</p>
+<ul>
+<li><strong>Learn</strong> (where Kneady starts): every tip complete - each drag and
+click, and the keys that work on every button (Ctrl to snap, Shift for
+fine steps, Alt to switch direction, Shift+Click to pin) - and the
+tutorials at the top of the tab: see <a href="#tutorials">Tutorials</a>. The first,
+0. Learn, Inform and Quiet, shows all three levels.</li>
+<li><strong>Inform:</strong> tips with what each drag and click does and what the button
+is for. The keys that work on every button are left to the status bar.
+The tab offers no tutorials, but a file's own.</li>
+<li><strong>Quiet:</strong> no tips and no tutorials. Button names and the status bar
+still show.</li>
+</ul>
+<p>Help is yours, not the file's: it is kept in Blender's settings folder, so
+it stays the same in every file you open, whoever made it. The small arrow
+beside the header icon opens the same two choices, Kneady on or off and
+Help.</p><div class="doc-clips"><p class="kicker">Examples</p><div class="clip-row"><figure class="clip"><video aria-label="Learn, Inform and Quiet, Step 1: Learn Shows Everything" class="clip-video" controls="" data-poster="/docs/media/help_levels/01_learn.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/help_levels/01_learn.mp4" type="video/mp4"/></video><figcaption><strong>Learn Shows Everything</strong><span>From tutorial 0, Learn, Inform and Quiet</span></figcaption></figure><figure class="clip"><video aria-label="Learn, Inform and Quiet, Step 2: Inform Says Less" class="clip-video" controls="" data-poster="/docs/media/help_levels/02_inform.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/help_levels/02_inform.mp4" type="video/mp4"/></video><figcaption><strong>Inform Says Less</strong><span>From tutorial 0, Learn, Inform and Quiet</span></figcaption></figure><figure class="clip"><video aria-label="Learn, Inform and Quiet, Step 3: Quiet Says Least" class="clip-video" controls="" data-poster="/docs/media/help_levels/03_quiet.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/help_levels/03_quiet.mp4" type="video/mp4"/></video><figcaption><strong>Quiet Says Least</strong><span>From tutorial 0, Learn, Inform and Quiet</span></figcaption></figure></div></div>
+<p><strong>Button Size</strong> sets how big the buttons' circles are, from small to
+large, for all of Kneady. It also follows Blender's Resolution Scale
+preference, so the buttons keep their size on high-resolution screens.</p>
+<p><strong>Labels</strong> puts the buttons' names under their circles, each in a small
+box with a thin border in its region's color:</p>
+<ul>
+<li><strong>On Hover</strong> (the default): the name of the circle under the mouse.
+Nothing else moves.</li>
+<li><strong>Always:</strong> every button's name, the circles spaced to make room. Useful
+while learning a character, and for screenshots.</li>
+<li><strong>Off:</strong> no names. A button's tip still gives its name and what it
+drives, at Help's Learn or Inform.</li>
+</ul>
+<p>A name is always shown, and keeps clear of the other buttons where it can.
+With a button under its circle, the name goes beside it, on the right, or
+on the left if a button is there too. With buttons on both sides as well,
+it goes above. With buttons all round, it goes over the lower half of its
+own button, brought down until it all but touches the button under it.</p>
+<p>In buttons one under another, the top one's name goes above it, the bottom
+one's below it, and the ones between beside them, all on one side: the
+right, or the left if something is on the right. In a Row + Column layout
+the ones between go to each column's outside. Always doesn't space a column
+out, since no name sits between its buttons.</p>
+<p>In an open menu with three or more buttons round it, the button that
+opened it shows no name, so the ring stays compact. Each name in the ring
+goes away from the middle: the top one's above, the bottom one's below,
+those at the sides beside them.</p>
+<p>At Help's Learn or Inform, a button's tip shows when the mouse rests on it
+for half a second: what each drag and click does there, and what the
+button is for. See <a href="#tips">Tips</a>.</p><div class="doc-clips"><p class="kicker">Examples</p><div class="clip-row"><figure class="clip"><video aria-label="The Look of Your Buttons, Step 2: Show Their Names" class="clip-video" controls="" data-poster="/docs/media/look/02_labels.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/look/02_labels.mp4" type="video/mp4"/></video><figcaption><strong>Show Their Names</strong><span>From tutorial 7, The Look of Your Buttons</span></figcaption></figure></div></div>
+<p><strong>Highlight</strong> sets how a hovered object's regions are shown, in their
+colors and opacity, the one under the mouse brighter than the rest:</p>
+<ul>
+<li><strong>Fill</strong> (the default): each region painted over its faces.</li>
+<li><strong>Outline:</strong> each region outlined: its border with the rest of the object
+and its edge against the view. <strong>Outline Width</strong> sets how thick, in
+pixels (6 by default, 2 to 16). Where two regions meet, the line between
+them is split down its middle, each region's color on its own side.
+Corners are mitered, so a line is equally strong all along at any
+opacity. A region set to Show Through has its outline drawn over whatever
+is in front of it, as its paint is.</li>
+</ul>
+<p>While a region is pinned, it is the only one painted.</p><div class="doc-clips"><p class="kicker">Examples</p><div class="clip-row"><figure class="clip"><video aria-label="The Look of Your Buttons, Step 5: Outline Instead of Fill" class="clip-video" controls="" data-poster="/docs/media/look/05_outline.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/look/05_outline.mp4" type="video/mp4"/></video><figcaption><strong>Outline Instead of Fill</strong><span>From tutorial 7, The Look of Your Buttons</span></figcaption></figure></div></div>
+<h2 id="regions">Regions</h2>
+<p>Select a mesh and the Kneady tab shows one tree for it, like the
+Outliner. Its regions are the top rows, each region's buttons are under
+it, and the buttons in a button's menu are under that button. A row with
+rows under it has a triangle that folds them away, and every row starts
+folded. Under the tree are the settings of the row selected: a region's,
+or a button's.</p>
+<p>Beside the tree, as in Blender's other lists:</p>
+<ul>
+<li><strong>+</strong> adds a button under the row selected: with a region selected,
+among its buttons. <strong>Add Region</strong>, in the <strong>Copy / Paste</strong> menu beside the
+tree (the down arrow under <strong>-</strong>), adds a region; with no regions yet, so
+does <strong>+</strong>.
+<strong>-</strong> removes the row selected. A region takes its buttons with it, and a
+button the buttons in its menu, so for either it asks first.</li>
+<li>The arrows move the row selected among its own: a region among the
+regions, a button among the buttons beside it.</li>
+<li>Double-clicking a name renames it.</li>
+</ul>
+<p>Removing a region also clears it from its faces.</p><div class="doc-clips"><p class="kicker">Examples</p><div class="clip-row"><figure class="clip"><video aria-label="Quick Start, Step 1: Select an Item" class="clip-video" controls="" data-poster="/docs/media/quick_start/01_select.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/quick_start/01_select.mp4" type="video/mp4"/></video><figcaption><strong>Select an Item</strong><span>From tutorial 1, Quick Start</span></figcaption></figure><figure class="clip"><video aria-label="Quick Start, Step 2: Create a Region" class="clip-video" controls="" data-poster="/docs/media/quick_start/02_region.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/quick_start/02_region.mp4" type="video/mp4"/></video><figcaption><strong>Create a Region</strong><span>From tutorial 1, Quick Start</span></figcaption></figure></div></div>
+<h3 id="which-faces">Which faces</h3>
+<p>A region is one of three things:</p>
+<ul>
+<li><strong>Faces you assign.</strong> Press <strong>Edit Faces</strong> to go into Edit mode with
+face selection on. Select faces, press <strong>Assign</strong>, and press <strong>Done</strong> to
+go back. <strong>Remove</strong> takes the selected faces out of the region.
+<strong>Select</strong> and <strong>Deselect</strong> select its faces, as vertex groups do. While
+Kneady is on, the regions are painted in Edit mode, with the active
+region stronger.</li>
+<li><strong>The whole object.</strong> <strong>Whole Object</strong> makes the region every face of
+the object that no other region holds.</li>
+<li><strong>Faces a face attribute marks.</strong> This is for a mesh made by Geometry
+Nodes, whose faces can't be assigned by hand. Name an integer or boolean
+face attribute in <strong>From Attribute</strong>, and give the <strong>Value</strong> it holds on
+the region's faces.</li>
+</ul><div class="doc-clips"><p class="kicker">Examples</p><div class="clip-row"><figure class="clip"><video aria-label="Quick Start, Step 3: Assign a Rollover" class="clip-video" controls="" data-poster="/docs/media/quick_start/03_assign.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/quick_start/03_assign.mp4" type="video/mp4"/></video><figcaption><strong>Assign a Rollover</strong><span>From tutorial 1, Quick Start</span></figcaption></figure></div></div>
+<h3 id="faces-from-a-rig">Faces from a rig</h3>
+<p>On a mesh a rig deforms, Edit Faces offers two shortcuts:</p>
+<ul>
+<li>
+<p><strong>Select Faces of &lt;bone&gt;</strong> appears when the region's first button
+turns a bone. It selects the faces that bone deforms, found from the
+mesh's vertex groups by name.</p>
+<ul>
+<li>A deform bone uses its own group.</li>
+<li>A control bone uses its deform bones' groups: Rigify's <code>forearm_fk.L</code>
+uses <code>DEF-forearm.L</code> and <code>DEF-forearm.L.001</code>, and Auto-Rig Pro's
+<code>c_forearm_fk.l</code> uses <code>forearm_stretch.l</code> and <code>forearm_twist.l</code>.</li>
+<li>A limb split into segments is selected whole, seams included.</li>
+</ul>
+<p>The report at the bottom of the window names the groups it used. If it
+finds none, choose a group by hand.</p>
+</li>
+<li>
+<p><strong>A vertex group field and Select Faces.</strong> These select the faces mostly
+weighted to any group you choose.</p>
+</li>
+</ul>
+<p>Both add to the selection. Press <strong>Assign</strong> to keep it.</p>
+<p>A new region on a mesh a rig deforms starts out turning the rig's <strong>active
+bone</strong>, the bone you last clicked in Pose mode, and takes that bone's name.
+With no bone active it turns the object, as on any other mesh.</p>
+<h3 id="how-it-looks">How it looks</h3>
+<ul>
+<li>
+<p><strong>Color</strong> and <strong>Opacity</strong> set the region's paint. When you hover an
+object, the region under the mouse is painted at its opacity, and the
+object's other regions are fainter.</p>
+</li>
+<li>
+<p><strong>Show Through</strong> is for a region that is hidden inside something else,
+such as a joint tucked into the next part. Once its object is hovered,
+the region can be hovered and is drawn through whatever covers it. It
+stays that way until the mouse moves onto something else.</p>
+<p>Such a region often shows only as a thin sliver, like a cap seen past
+the part it is tucked into, so it is forgiving at its edges:</p>
+<ul>
+<li>It stays hovered until the mouse is a few pixels past its edge, which
+makes its buttons easy to reach even where it is thin.</li>
+<li>When the mouse leaves its object within a few pixels of it, the
+hover goes to it rather than to whatever is beside it.</li>
+<li>Moving onto it from the rest of its object is immediate.</li>
+</ul>
+</li>
+</ul>
+<h2 id="buttons">Buttons</h2>
+<p>A region's buttons, up to eight, are the rows under it in the tree. With
+the region selected, <strong>+</strong> adds one after the others; with a button
+selected, it adds one beside that button (or in its menu, where a file's
+layout builds menus), and <strong>-</strong> removes it. The up and down arrows move the button
+selected, which is where its circle sits in the row, column or circle.
+Double-click a name to rename it. The selected button's settings show
+under the tree.</p><div class="doc-clips"><p class="kicker">Examples</p><div class="clip-row"><figure class="clip"><video aria-label="Change the Default Controls, Step 1: Pick the Button" class="clip-video" controls="" data-poster="/docs/media/change_controls/01_pick.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/change_controls/01_pick.mp4" type="video/mp4"/></video><figcaption><strong>Pick the Button</strong><span>From tutorial 2, Change the Default Controls</span></figcaption></figure></div></div>
+<p>A region's own settings, its row selected, end with <strong>Its Buttons</strong>:
+<strong>Arrange</strong> (below) and <strong>Override Color</strong>, which colors the buttons
+together: every button in a region has the same color. Off, they are
+drawn in the region's color. Tick it and a swatch appears beside it,
+starting at the region's color: pick theirs there. Their outlines,
+arrows, fill under the mouse and names' borders all take it, and so do 3D
+handles. Turning it off and on again keeps the color picked.</p>
+<p>When the region is hovered, its buttons appear as circles in its middle:</p>
+<ul>
+<li>A drag that starts on a circle runs that button's commands. A click on a
+toggle's circle switches it (see <a href="#toggles">Toggles</a>).</li>
+<li>A drag anywhere else on the region runs the first button that drags,
+skipping toggles. It is marked with a pointer in the tree. Moving
+another drag button above it makes that one the region's.</li>
+<li>A narrow band around the circles also counts as the region, so moving
+between circles doesn't lose the hover.</li>
+</ul>
+<p><strong>Arrange</strong> lines the circles up:</p>
+<ul>
+<li><strong>Row:</strong> left to right.</li>
+<li><strong>Column:</strong> top to bottom.</li>
+<li><strong>Row + Column:</strong> two columns from four buttons, in rows of two. An odd
+last one sits centered above them: five is the fifth over two rows, and
+eight makes four rows.</li>
+<li><strong>Circle:</strong> around a ring, the first at the top and the rest clockwise.</li>
+</ul><div class="doc-clips"><p class="kicker">Examples</p><div class="clip-row"><figure class="clip"><video aria-label="The Look of Your Buttons, Step 1: Line Them Up" class="clip-video" controls="" data-poster="/docs/media/look/01_column.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/look/01_column.mp4" type="video/mp4"/></video><figcaption><strong>Line Them Up</strong><span>From tutorial 7, The Look of Your Buttons</span></figcaption></figure></div></div>
+<p>Each button has:</p>
+<ul>
+<li><strong>A name</strong>, shown under its circle and in its tip (see Labels in
+<a href="#turning-kneady-on">Turning Kneady on</a>), and an eye that hides its circle.</li>
+<li><strong>Drag</strong>, <strong>Toggle</strong> or <strong>Gap</strong>: what the button does. A drag button runs
+its commands as you drag; a toggle switches something on and off with a
+click. A gap holds a place in the row or a menu's ring and shows nothing
+there, to space the buttons around it - in a ring of four, two gaps put
+two buttons where you want them. Viewport Edit shows a gap as a dashed
+circle, to select it and move it.</li>
+<li><strong>Icon</strong>, what its circle shows:
+<ul>
+<li><strong>Arrows</strong>: <strong>From Drags</strong> draws an arrow for each direction the
+button drives, curved for a turn and straight otherwise. Or choose a
+set beside it: Left and Right, Up and Down, Four Ways, their curved
+versions, Diagonal, Outward (four arrows to the corners, for a
+growth) or Spin (round in a circle, for a twist). A toggle shows a
+ring, with a dot while it is on.</li>
+<li><strong>Image</strong>, any image.</li>
+<li><strong>Object</strong>, a mesh object's faces. Model it flat, in any view.</li>
+<li><strong>Text</strong>, the button's name in a rounded box instead of a circle: as
+wide as the name, about as tall as its letters. A region can mix text
+buttons with icon ones, and the row makes room for each.</li>
+</ul>
+</li>
+<li><strong>Shape</strong>, under the icon: <strong>Circle</strong>, or <strong>Square</strong>, the same size with
+its corners rounded as a text button's box is. Use it to tell kinds of
+button apart at a glance - toggles square and drags round, say. Its
+whole square takes the click, corners included. A text button is always
+its name's box.</li>
+<li><strong>Drags Prefer Single Direction</strong>, on by default. Once a drag has gone
+a few pixels one way, it drives only that direction, so one thing
+changes at a time. See <a href="#dragging">Dragging</a> for using Alt to switch.</li>
+<li>A command for <strong>Left / Right</strong> and one for <strong>Up / Down</strong>. Tick a
+direction to use it. A direction that is on is a section that folds
+away, with the arrow at its left, so you can hide its commands while it
+stays on.</li>
+<li><strong>Tip</strong>, last in its settings: what its tip says (below).</li>
+</ul><div class="doc-clips"><p class="kicker">Examples</p><div class="clip-row"><figure class="clip"><video aria-label="The Look of Your Buttons, Step 3: A Text Button" class="clip-video" controls="" data-poster="/docs/media/look/03_text.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/look/03_text.mp4" type="video/mp4"/></video><figcaption><strong>A Text Button</strong><span>From tutorial 7, The Look of Your Buttons</span></figcaption></figure><figure class="clip"><video aria-label="The Look of Your Buttons, Step 4: Square Buttons" class="clip-video" controls="" data-poster="/docs/media/look/04_square.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/look/04_square.mp4" type="video/mp4"/></video><figcaption><strong>Square Buttons</strong><span>From tutorial 7, The Look of Your Buttons</span></figcaption></figure></div></div>
+<h3 id="tips">Tips</h3>
+<p>Rest the mouse on a button for half a second and its tip appears under its
+name. Every tip has the same layout, so you learn to read it once:</p>
+<div aria-label="Code" class="scroll-x" role="region" tabindex="0"><pre><code> Drag ↕          Curl
+ Drag ↔          Spread
+ Click           More controls: Move, Length, Sides
+ Shift+Click     Keep these controls up
+ ─────────────────────────────────────
+ Bends the finger at its knuckle.
+</code></pre></div>
+<ul>
+<li><strong>A row per key.</strong> The left column is the key or mouse action; the right
+is what it does on this button. Kneady writes both from the button's
+commands: Drag ↕ is Up / Down, Drag ↔ is Left / Right, and a 3D handle's
+one drag is <strong>Drag</strong> (<strong>Drag around</strong> for a ring). A drag driving several
+things says them briefly: four sides of one end are its <strong>Sides</strong>, both
+ends' are <strong>Start and End Sides</strong>. A button that opens a menu names the
+first few buttons in it. A key held during a drag comes after it,
+<strong>Drag+Alt</strong>: with Maya-style navigation, Alt held before the press orbits
+the view, so it is pressed once the drag has begun.</li>
+<li><strong>The author's message</strong> under a line: what the button is for.</li>
+</ul>
+<p>The drags and the click always show. At Inform, the keys that work on every
+button - Ctrl to snap, Shift for fine steps, Alt to switch direction
+mid-drag - are hidden, since repeated on every tip they would be read past;
+so is Shift+Click to pin, except on a button that opens a menu. At Learn
+they show too, all but a row its author hid. A tip that would
+only repeat the button's name shows nothing. The status bar always lists
+every key, in the same words. Blender's own tooltip does not show on a
+button - the tip takes its place - but still does on Viewport Edit's icons.</p>
+<p>To write a button's tip, open <strong>Tip</strong> at the end of its settings:</p>
+<ul>
+<li>Each row shows its key, then a field holding Kneady's words in grey. Type
+your own - "Curl" for Rotate X - and that row says yours, in the tip and
+in the status bar. Clear the field to go back to Kneady's.</li>
+<li>The eye beside a row shows or hides it in the tip.</li>
+<li>The field under the rows is the message.</li>
+</ul>
+<p>The key itself can't be edited: it comes from the button's commands, so a
+tip stays true when they change. Your words are kept with the row they
+belong to - a drag direction, the click - so reordering or adding commands
+keeps them; a row whose command is removed comes back with your words if
+the command does. A copied or pasted button takes its tip; <strong>Paste
+Commands</strong> takes the rows' words, which describe the commands, and leaves
+the message.</p><div class="doc-clips"><p class="kicker">Examples</p><div class="clip-row"><figure class="clip"><video aria-label="Tips for Your Buttons, Step 1: Read Turn's Tip" class="clip-video" controls="" data-poster="/docs/media/tips/01_read.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/tips/01_read.mp4" type="video/mp4"/></video><figcaption><strong>Read Turn's Tip</strong><span>From tutorial 12, Tips for Your Buttons</span></figcaption></figure><figure class="clip"><video aria-label="Tips for Your Buttons, Step 2: Say It Your Way" class="clip-video" controls="" data-poster="/docs/media/tips/02_words.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/tips/02_words.mp4" type="video/mp4"/></video><figcaption><strong>Say It Your Way</strong><span>From tutorial 12, Tips for Your Buttons</span></figcaption></figure><figure class="clip"><video aria-label="Tips for Your Buttons, Step 3: Add a Message" class="clip-video" controls="" data-poster="/docs/media/tips/03_message.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/tips/03_message.mp4" type="video/mp4"/></video><figcaption><strong>Add a Message</strong><span>From tutorial 12, Tips for Your Buttons</span></figcaption></figure><figure class="clip"><video aria-label="Tips for Your Buttons, Step 4: How Much Kneady Says" class="clip-video" controls="" data-poster="/docs/media/tips/04_help.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/tips/04_help.mp4" type="video/mp4"/></video><figcaption><strong>How Much Kneady Says</strong><span>From tutorial 12, Tips for Your Buttons</span></figcaption></figure></div></div>
+<h3 id="toggles">Toggles</h3>
+<p>A <strong>Toggle</strong> button switches what it drives on and off with a click, and
+its circle stays lit while it is on. Under <strong>Click Switches</strong> choose what
+it switches: a <strong>Modifier Input</strong> (a boolean one, or a number) or a
+<strong>Property</strong> by its data path.</p>
+<ul>
+<li>A boolean is switched between off and on.</li>
+<li>A number is switched between 0 and 1: a rig's IK / FK switch, a
+visibility factor, a constraint's influence.</li>
+<li><strong>Invert: Lit at 0</strong> lights the button when the value is 0 instead.</li>
+<li><strong>Sets a Value</strong>, and the value beside it, makes the button one of a
+choice: a click sets that value, and the button is lit while the property
+holds it. A rig's IK parent switch - 0 Root, 1 Torso, 2 Chest, 3
+Shoulder - is four such buttons, often in a menu. A click on the lit one
+changes nothing. With the hand control in Keep Pose's Keep list, the hand
+stays where it is as its parent changes.</li>
+<li><strong>Add Command</strong> switches more than one thing with the same click. The
+first one decides whether the button is lit.</li>
+</ul><div class="doc-clips"><p class="kicker">Examples</p><div class="clip-row"><figure class="clip"><video aria-label="Toggles and Show When, Step 1: Add a Toggle" class="clip-video" controls="" data-poster="/docs/media/toggles/01_add.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/toggles/01_add.mp4" type="video/mp4"/></video><figcaption><strong>Add a Toggle</strong><span>From tutorial 6, Toggles and Show When</span></figcaption></figure><figure class="clip"><video aria-label="Toggles and Show When, Step 2: Point It at the Switch" class="clip-video" controls="" data-poster="/docs/media/toggles/02_switch.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/toggles/02_switch.mp4" type="video/mp4"/></video><figcaption><strong>Point It at the Switch</strong><span>From tutorial 6, Toggles and Show When</span></figcaption></figure><figure class="clip"><video aria-label="Toggles and Show When, Step 3: Switch It" class="clip-video" controls="" data-poster="/docs/media/toggles/03_click.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/toggles/03_click.mp4" type="video/mp4"/></video><figcaption><strong>Switch It</strong><span>From tutorial 6, Toggles and Show When</span></figcaption></figure></div></div>
+<p>On an object many copies share (Deform Hovered Object), the circle shows
+the state of the copy you are hovering. A click is one undo step, and
+Auto Keying keys what it switched. A press that drags off the circle
+switches nothing, as with any button. If the switch changes which buttons
+show, the spot you clicked keeps its region hovered until you move off it,
+so whatever lies under that spot can't take the hover.</p>
+<h3 id="copy-and-paste">Copy and paste</h3>
+<p>The <strong>Copy / Paste</strong> menu beside the tree (the down arrow under <strong>-</strong>)
+copies and pastes:</p>
+<ul>
+<li><strong>Copy Button</strong> and <strong>Paste Button</strong> copy the selected button, and paste
+over the selected button.</li>
+<li><strong>Copy Commands</strong> and <strong>Paste Commands</strong> copy only what a button drives:
+whether it drags or toggles, the commands of each direction or of its
+click, and an operator its click runs. The button you paste onto keeps
+its name, icon, shape, place and menu.</li>
+<li><strong>Copy All Buttons</strong> copies every button of the region, with the menus
+they open, and how they are arranged. <strong>Paste All Buttons</strong> puts them on
+another region, in place of its own. The region you paste onto keeps its
+own name, faces, color and opacity.</li>
+</ul><div class="doc-clips"><p class="kicker">Examples</p><div class="clip-row"><figure class="clip"><video aria-label="Copy and Reuse, Step 1: Copy Turn's Commands onto Tilt" class="clip-video" controls="" data-poster="/docs/media/copy_reuse/01_copy.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/copy_reuse/01_copy.mp4" type="video/mp4"/></video><figcaption><strong>Copy Turn's Commands onto Tilt</strong><span>From tutorial 11, Copy and Reuse</span></figcaption></figure><figure class="clip"><video aria-label="Copy and Reuse, Step 4: Give the Hips the Chest's Buttons" class="clip-video" controls="" data-poster="/docs/media/copy_reuse/04_copy_all.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/copy_reuse/04_copy_all.mp4" type="video/mp4"/></video><figcaption><strong>Give the Hips the Chest's Buttons</strong><span>From tutorial 11, Copy and Reuse</span></figcaption></figure><figure class="clip"><video aria-label="Copy and Reuse, Step 5: Point Them at the Hips" class="clip-video" controls="" data-poster="/docs/media/copy_reuse/05_hips.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/copy_reuse/05_hips.mp4" type="video/mp4"/></video><figcaption><strong>Point Them at the Hips</strong><span>From tutorial 11, Copy and Reuse</span></figcaption></figure></div></div>
+<p>The copy goes on the system clipboard, so you can paste into another
+Blender file. Targets are matched by name there: a command on <code>ArmRig</code>'s
+<code>Lower</code> bone drives that file's <code>ArmRig</code>, if it has one.</p>
+<h3 id="viewport-edit">Viewport Edit</h3>
+<p><strong>Viewport Edit</strong>, at the top of the tab, edits the buttons from the
+viewport, where you can see them:</p>
+<ul>
+<li>A click on a button does what it always does - a toggle switches, a
+button that opens a menu opens it - and selects its row in the tree,
+unfolding the rows over it. Its settings show under the tree.</li>
+<li><strong>Ctrl+click</strong> selects it without doing anything else, so a menu's
+button can be edited without opening its menu.</li>
+<li>A click on a region's faces selects the region's row.</li>
+<li>Icons sit out from the corners of the square round the hovered
+region's buttons - its row, or the menu open:
+<ul>
+<li>At the top right, <strong>+</strong> adds a button to those showing, and selects
+it. <strong>-</strong> beside it removes the button selected, with the buttons in
+its menu, and shows only while that button is among those showing.</li>
+<li>At the top left, a grip of six dots turns <strong>Rearrange</strong> on and off; it
+is blue while on. The same toggle is under Viewport Edit in the tab.
+The icons stay where they are while you add, remove and rearrange
+buttons; they move out only if the buttons would reach them. The whole
+square, out to the icons, keeps the region hovered, so the mouse can
+cross to them.</li>
+</ul>
+</li>
+<li>With <strong>Rearrange</strong> on, a drag from a button in the row or the menu's
+ring picks it up instead of running its commands. It follows the mouse,
+and the others move to make room as it passes their places: along a row
+or column, through a grid, around a ring or a circle. Release keeps the
+new order, as one undo step; Esc puts it back. It is the same order as
+the tree's and its arrows. A click still does what it does, so you can
+open a menu and rearrange what is in it. Buttons placed on the item keep
+their places, and a menu's own button stays in the middle of its ring.
+Moving another drag button to the front makes it the one a drag on the
+region runs.</li>
+<li>A <strong>right-click</strong> on a button or a region opens what can be done to it:
+copy and paste the button, its commands, or all the region's buttons, as
+in the menu beside the tree. Anywhere else, a right-click does what it
+always does.</li>
+<li>The region you last hovered stays hovered, any menu in it open, while
+the mouse crosses empty space to the tab. Hovering another region moves
+on to it.</li>
+<li>The button selected in the tree has a dashed ring round it in the
+viewport - picked there or chosen in the tree - so you can see which one
+you are editing.</li>
+</ul><div class="doc-clips"><p class="kicker">Examples</p><div class="clip-row"><figure class="clip"><video aria-label="Viewport Edit, Step 1: Pick a Button on the Item" class="clip-video" controls="" data-poster="/docs/media/viewport_edit/01_pick.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/viewport_edit/01_pick.mp4" type="video/mp4"/></video><figcaption><strong>Pick a Button on the Item</strong><span>From tutorial 10, Viewport Edit</span></figcaption></figure><figure class="clip"><video aria-label="Viewport Edit, Step 2: Add a Button" class="clip-video" controls="" data-poster="/docs/media/viewport_edit/02_add.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/viewport_edit/02_add.mp4" type="video/mp4"/></video><figcaption><strong>Add a Button</strong><span>From tutorial 10, Viewport Edit</span></figcaption></figure><figure class="clip"><video aria-label="Viewport Edit, Step 3: Rearrange the Row" class="clip-video" controls="" data-poster="/docs/media/viewport_edit/03_arrange.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/viewport_edit/03_arrange.mp4" type="video/mp4"/></video><figcaption><strong>Rearrange the Row</strong><span>From tutorial 10, Viewport Edit</span></figcaption></figure><figure class="clip"><video aria-label="Viewport Edit, Step 4: Remove a Menu" class="clip-video" controls="" data-poster="/docs/media/viewport_edit/04_remove.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/viewport_edit/04_remove.mp4" type="video/mp4"/></video><figcaption><strong>Remove a Menu</strong><span>From tutorial 10, Viewport Edit</span></figcaption></figure></div></div>
+<h2 id="commands">Commands</h2>
+<p>A command says what one drag direction drives.</p>
+<p>Each command folds to one line, and starts folded: the input it drives
+(you can pick another there), the property's path, or the turn, move or
+scale in words, such as <strong>Rotate X on Upper</strong>. A warning sign on that line
+means the command can't run as it is set; unfold it to read why. Click the
+arrow to see the rest of its settings.</p>
+<p><strong>Drives:</strong></p>
+<div aria-label="Table" class="scroll-x" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Kind</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rotate</strong></td>
+<td>Turns its target about one of the target's own axes, following the mouse.</td>
+</tr>
+<tr>
+<td><strong>Move</strong></td>
+<td>Moves its target along one of its own axes, following the mouse.</td>
+</tr>
+<tr>
+<td><strong>Scale</strong></td>
+<td>Scales its target on one axis, or <strong>All</strong> three. Right and up grow it.</td>
+</tr>
+<tr>
+<td><strong>Modifier Input</strong></td>
+<td>Changes a Geometry Nodes modifier's input, by name. Right and up raise it. Leave <strong>Modifier</strong> empty to use the target's first Geometry Nodes modifier. <strong>Input</strong> lists the inputs its panel shows.</td>
+</tr>
+<tr>
+<td><strong>Property</strong></td>
+<td>Changes any property, by its data path. Right and up raise it. To get a path, right-click a field and choose Copy Data Path. A custom property keeps to its own minimum and maximum.</td>
+</tr>
+</tbody>
+</table></div><div class="doc-clips"><p class="kicker">Examples</p><div class="clip-row"><figure class="clip"><video aria-label="Drive More Than Bones, Step 1: Round It with a Shape Key" class="clip-video" controls="" data-poster="/docs/media/drive_more/01_shape_key.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/drive_more/01_shape_key.mp4" type="video/mp4"/></video><figcaption><strong>Round It with a Shape Key</strong><span>From tutorial 3, Drive More Than Bones</span></figcaption></figure><figure class="clip"><video aria-label="Drive More Than Bones, Step 2: Twist It with a Modifier Input" class="clip-video" controls="" data-poster="/docs/media/drive_more/02_modifier_input.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/drive_more/02_modifier_input.mp4" type="video/mp4"/></video><figcaption><strong>Twist It with a Modifier Input</strong><span>From tutorial 3, Drive More Than Bones</span></figcaption></figure></div></div>
+<p>Another add-on can give a kind of its own, as a button under the Drives
+choice, for what only it knows how to drive - with modifier keys of its
+own, which its status bar names. Click it again to go back to the choice
+above. Along a 3D handle it follows the mouse like a Move or Rotate;
+elsewhere it goes at its Speed.</p>
+<p><strong>What it drives:</strong></p>
+<ul>
+<li><strong>Deform Hovered Object</strong> (on): the command drives the object you are
+hovering.</li>
+<li>With it off, the command drives its <strong>Target</strong>. For an armature, also
+choose a <strong>Bone</strong>.</li>
+<li>Where another add-on gives groups of objects, <strong>Object</strong> and <strong>Group</strong>
+appear with it off. <strong>Group</strong> drives whichever of the group's objects
+the drag is on, as that add-on picks it, so one set of buttons serves
+them all.</li>
+<li><strong>Use &lt;Rig&gt;</strong> fills in the armature that deforms the mesh, in one
+click.</li>
+<li><strong>Use &lt;bone&gt;</strong> fills in that armature's active bone.</li>
+</ul>
+<p><strong>How it moves:</strong></p>
+<ul>
+<li><strong>Axis:</strong> X, Y or Z of the target's own frame, for a turn, move or scale.
+Or, for a turn or a move, the view's:
+<ul>
+<li><strong>View:</strong> a Move follows the mouse across and up the screen, as G does,
+whichever way the target faces. A Rotate turns it as if the mouse
+rolled it, as R pressed twice does. Give it both directions, and turn
+Drags Prefer Single Direction off, for a free move or turn in one drag.</li>
+<li><strong>Depth:</strong> a Move toward or away from you, a Rotate rolling it about
+your line of sight.
+Locked channels of the target stay where they are.</li>
+</ul>
+</li>
+<li><strong>Location Channels</strong> (Move, an object's): moves it along its Location
+channels - its parent's axes, as typing in the Item panel does - not its
+own turned axes.</li>
+<li><strong>Speed:</strong> how far it goes for 100 pixels of drag.
+<ul>
+<li>For a turn, an angle.</li>
+<li>For a move, a distance in scene units, whatever the target's own scale
+(an FBX rig at 0.01 still moves as you'd expect).</li>
+<li>For a scale, a growth: 0.3 is about a third.</li>
+</ul>
+</li>
+<li><strong>Ctrl Step:</strong> what holding Ctrl snaps to.</li>
+<li><strong>Invert:</strong> drives it the other way.</li>
+<li><strong>Follow the Mouse</strong> (Rotate and Move, on by default): it goes the way the
+mouse goes in any view. Off, right and up drive it the positive way, and
+Invert the other: for commands that should go different ways at once,
+such as fingers spreading apart.</li>
+<li><strong>Multiply</strong> (inputs and properties): scales the value instead of adding
+to it. Values driven together this way keep their proportions.</li>
+</ul><div class="doc-clips"><p class="kicker">Examples</p><div class="clip-row"><figure class="clip"><video aria-label="Change the Default Controls, Step 2: Left and Right Slides It" class="clip-video" controls="" data-poster="/docs/media/change_controls/02_slide.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/change_controls/02_slide.mp4" type="video/mp4"/></video><figcaption><strong>Left and Right Slides It</strong><span>From tutorial 2, Change the Default Controls</span></figcaption></figure><figure class="clip"><video aria-label="Change the Default Controls, Step 3: Up and Down Grows It" class="clip-video" controls="" data-poster="/docs/media/change_controls/03_grow.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/change_controls/03_grow.mp4" type="video/mp4"/></video><figcaption><strong>Up and Down Grows It</strong><span>From tutorial 2, Change the Default Controls</span></figcaption></figure><figure class="clip"><video aria-label="Change the Default Controls, Step 4: Choose Its Speed" class="clip-video" controls="" data-poster="/docs/media/change_controls/04_speed.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/change_controls/04_speed.mp4" type="video/mp4"/></video><figcaption><strong>Choose Its Speed</strong><span>From tutorial 2, Change the Default Controls</span></figcaption></figure></div></div>
+<p><strong>Several at once:</strong> <strong>Add Command</strong> gives a direction another command,
+up to sixteen (a fist curls twelve finger bones). One drag moves them all, each at its own speed: for example,
+two shape keys together, or a bone and a material value. A command you
+add starts unfolded, ready to set up. Once a direction has two or more,
+each has a trash button that removes it. Removing the first moves the next
+one up. To stop a direction driving anything, untick it.</p><div class="doc-clips"><p class="kicker">Examples</p><div class="clip-row"><figure class="clip"><video aria-label="Drive More Than Bones, Step 4: Two Things at Once" class="clip-video" controls="" data-poster="/docs/media/drive_more/04_two_at_once.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/drive_more/04_two_at_once.mp4" type="video/mp4"/></video><figcaption><strong>Two Things at Once</strong><span>From tutorial 3, Drive More Than Bones</span></figcaption></figure></div></div>
+<p><strong>One value, both directions:</strong> give left / right and up / down the same
+commands, and the value follows whichever way you drag: a button that
+scales the same either way. Where two commands drive one value, they add up
+(or, with Multiply, multiply), so a drag that uses both directions moves it
+by both.</p>
+<p><strong>When it can't run</strong>, the command says why, in red under it:</p>
+<ul>
+<li>a locked channel ("Its rotation is locked")</li>
+<li>a driver ("... is set by a driver")</li>
+<li>a name that no longer exists ("ArmRig has no bone Lower: renamed? Choose
+it again")</li>
+<li>a character that is linked and not overridden</li>
+</ul>
+<p>A constraint or an IK chain that holds the result is named too. The drag
+still writes the channel beneath it, which is worth setting for when the
+constraint is off.</p>
+<h2 id="dragging">Dragging</h2>
+<p>Hover a region and press, then drag:</p>
+<ul>
+<li><strong>Rotate and Move follow the mouse:</strong> the surface under the cursor moves
+with it, whichever way the object faces.</li>
+<li><strong>Shift</strong> slows the drag to a tenth while it is held.</li>
+<li><strong>Ctrl</strong> snaps to each command's Ctrl Step.</li>
+<li><strong>Alt:</strong> with Drags Prefer Single Direction on, holding Alt hands the
+drag to the other direction, and releasing it hands it back. Each
+direction keeps what the other did, so you can build up several changes
+in one drag and one undo step.</li>
+<li><strong>Esc</strong> or a right-click cancels and puts everything back.</li>
+<li>A <strong>click</strong> without dragging selects:
+<ul>
+<li>in Object mode, the object (Shift+click on the region adds or removes it)</li>
+<li>in Pose mode, the bones the button drives</li>
+</ul>
+</li>
+<li><strong>Shift+click on a button pins its region:</strong> it stays hovered, its buttons
+shown, wherever the mouse goes - handy for a small or thin region, hard to
+stay on. Shift+click on one of its buttons again, or press <strong>Esc</strong>, to let
+go. The status bar says while one is pinned. A click elsewhere still
+reaches Blender.</li>
+</ul><div class="doc-clips"><p class="kicker">Examples</p><div class="clip-row"><figure class="clip"><video aria-label="Quick Start, Step 4: Haul a Button" class="clip-video" controls="" data-poster="/docs/media/quick_start/04_haul.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/quick_start/04_haul.mp4" type="video/mp4"/></video><figcaption><strong>Haul a Button</strong><span>From tutorial 1, Quick Start</span></figcaption></figure><figure class="clip"><video aria-label="Change the Default Controls, Step 5: Try It" class="clip-video" controls="" data-poster="/docs/media/change_controls/05_try.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/change_controls/05_try.mp4" type="video/mp4"/></video><figcaption><strong>Try It</strong><span>From tutorial 2, Change the Default Controls</span></figcaption></figure><figure class="clip"><video aria-label="Drive More Than Bones, Step 5: Switch with Alt" class="clip-video" controls="" data-poster="/docs/media/drive_more/05_alt.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/drive_more/05_alt.mp4" type="video/mp4"/></video><figcaption><strong>Switch with Alt</strong><span>From tutorial 3, Drive More Than Bones</span></figcaption></figure></div></div>
+<p>The status bar shows what the drag is driving and, with one direction at a
+time, what holding Alt would switch to.</p>
+<p><strong>Hovering</strong> says what the mouse can do there, in the status bar, each key
+as Blender's own key icon: on a region's faces, the button a drag runs; on a
+button, its drag, its click (opening its menu, or going back), Shift+click to
+pin; on a 3D handle, its drag and the keys that change it (an add-on's own
+too: Digit's Side boxes, Alt for both sides of an axis, Alt+Shift for all
+four), Ctrl to snap and Shift for fine. Hold a key and what it does stands
+out, the rest dimmed - during a drag too, so the mode in effect shows even
+when Alt before a click orbits the view (Maya-style navigation). Holding a
+key over a handle also lights the other handles its drag would move with it,
+as if they were under the mouse too. The hint goes when the mouse leaves
+the 3D view.</p>
+<p><strong>Typing a number</strong> during a drag sets it exactly, as G, R and S take
+numbers:</p>
+<ul>
+<li>Digits and a decimal point type it. Minus flips the sign, and Backspace
+erases.</li>
+<li>It goes to the first command of the direction you are dragging. The
+other commands on that direction follow, keeping their relation.</li>
+<li>Enter, or releasing the mouse, confirms.</li>
+</ul>
+<p><strong>After a drag</strong>, the Adjust Last Operation panel shows the value each
+command came to: degrees for a turn, a factor for Multiply, the value
+itself for an input or property. Type into any field and the drag is
+redone to give it, the other commands following.</p>
+<p><strong>Nothing moved?</strong> If the mesh under the mouse hasn't moved after a short
+drag, the status bar says so. An IK / FK switch or a constraint may be
+holding what you are driving. Some rigs blend IK and FK in ways no setting
+shows, so Kneady also checks the surface itself.</p>
+<h2 id="posing-and-keying">Posing and keying</h2>
+<p><strong>Pose mode:</strong> select the armature and enter Pose mode. Kneady hovers and
+drags the meshes it deforms just as in Object mode. A click selects the
+bones the button drives, so the Graph Editor and Dope Sheet show their
+keys.</p>
+<p><strong>Auto Keying:</strong> with Auto Keying on, what a drag changes is keyed at the
+current frame. Kneady follows Blender's keying settings:</p>
+<ul>
+<li><strong>Only Insert Available</strong> and <strong>Only Insert Needed</strong></li>
+<li><strong>Visual Keying</strong> and <strong>Cycle-Aware Keying</strong></li>
+<li><strong>Replace</strong> mode</li>
+<li><strong>Only Active Keying Set</strong>, which keys only what the active keying set
+holds</li>
+</ul>
+<p>If the settings let nothing be keyed, a warning says which setting stopped
+it.</p>
+<p><strong>Locks:</strong> a transform channel you've locked in Blender stays locked, and
+the command says so.</p>
+<p><strong>Undo:</strong> each drag is one undo step, and so is each region edit.</p>
+<h2 id="notes-for-common-rigs">Notes for common rigs</h2>
+<p>Most rigs switch an arm or leg between FK and IK with a custom property.
+The simplest control is a <a href="#toggles">toggle</a>: set a button to <strong>Toggle</strong>,
+choose <strong>Property</strong>, turn Deform Hovered Object off, make the rig its
+<strong>Target</strong>, and paste the switch's path. A click flips the limb between IK
+(0) and FK (1), and the button is lit in FK. To blend between them
+instead, use a drag button with a <strong>Property</strong> command on the same path.
+The property's own range keeps it between FK and IK.</p>
+<div aria-label="Table" class="scroll-x" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Rig</th>
+<th>Arm's IK / FK switch (left arm)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rigify</td>
+<td><code>pose.bones["upper_arm_parent.L"]["IK_FK"]</code></td>
+</tr>
+<tr>
+<td>Auto-Rig Pro</td>
+<td><code>pose.bones["c_hand_ik.l"]["ik_fk_switch"]</code></td>
+</tr>
+<tr>
+<td>Rain (Blender Studio, CloudRig)</td>
+<td><code>pose.bones["Properties_IKFK"]["ik_arm_left"]</code></td>
+</tr>
+</tbody>
+</table></div><div class="doc-clips"><p class="kicker">Examples</p><div class="clip-row"><figure class="clip"><video aria-label="Toggles and Show When, Step 6: Try It" class="clip-video" controls="" data-poster="/docs/media/toggles/06_try.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/toggles/06_try.mp4" type="video/mp4"/></video><figcaption><strong>Try It</strong><span>From tutorial 6, Toggles and Show When</span></figcaption></figure></div></div>
+<ul>
+<li><strong>FK controls under IK don't move the arm.</strong> Where Kneady can read what
+holds them, as on Rigify, it names the constraint. Where it can't (Auto-Rig
+Pro blends through helper bones), the status bar says nothing has moved.</li>
+<li><strong>Auto-Rig Pro</strong> locks some axes, such as an FK forearm's X and Y. A
+command on a locked axis says so: choose Z.</li>
+<li><strong>Mixamo</strong> characters are plain FK: drive <code>mixamorig:</code> bones directly. The
+FBX rig's 0.01 scale is handled.</li>
+<li><strong>MPFB2</strong> humans work with both their standard rig and a generated
+Rigify rig.</li>
+<li><strong>Shape keys</strong>, on any mesh, are Property commands on the mesh itself
+(Deform Hovered Object on), with a path such as
+<code>data.shape_keys.key_blocks["Smile"].value</code>. Copy Data Path gives the part
+from <code>key_blocks</code> on, so put <code>data.shape_keys.</code> in front. A shape key
+stays within its Range Min and Max.</li>
+</ul>
+<h2 id="beyond-the-row-placed-buttons-3d-handles-and-menus">Beyond the row: placed buttons, 3D handles and menus</h2>
+<p>A button doesn't have to sit in its region's row. It can sit at its own
+point on the item, show as a 3D handle, open a menu of more buttons, come
+and go with a switch, or - a toggle - keep the pose as it switches. Making
+them:</p>
+<ul>
+<li><strong>Where a button shows</strong> is one choice in its settings: <strong>In Row</strong> (<strong>In
+Ring</strong> in a menu), <strong>On Item</strong> or <strong>3D Handle</strong>. The icon in its row of
+the tree switches between the row and the item with a click.</li>
+<li><strong>Place on Surface</strong> puts placed buttons where they go. Turn it on under
+Viewport Edit's <strong>Rearrange</strong>, or with its icon at the top left of the
+buttons in the viewport. The region stays on screen while you drag its
+buttons onto the item, or back to the row. Blender's snapping applies, and
+Ctrl flips it. <strong>Done Placing</strong> keeps it all as one undo step; Esc puts
+everything back.<div class="doc-clips"><p class="kicker">Examples</p><div class="clip-row"><figure class="clip"><video aria-label="Buttons on the Item, Step 2: Place It by the Wrist" class="clip-video" controls="" data-poster="/docs/media/on_item/02_place.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/on_item/02_place.mp4" type="video/mp4"/></video><figcaption><strong>Place It by the Wrist</strong><span>From tutorial 8, Buttons on the Item</span></figcaption></figure></div></div></li>
+<li><strong>A menu:</strong> turn on <strong>Opens Menu</strong> in a button's settings, then <strong>Add to
+Its Menu</strong>. The menu's buttons are the rows under that button in the
+tree, a sub menu's one level further in. <strong>Copy Menu</strong> and <strong>Paste
+Menu</strong>, in the tree's Copy / Paste menu, carry a menu and its sub menus to
+another button or region; <strong>Move To</strong> sends a button, its menu with it,
+somewhere else.<div class="doc-clips"><p class="kicker">Examples</p><div class="clip-row"><figure class="clip"><video aria-label="Build a Menu, Step 2: Give It a Menu" class="clip-video" controls="" data-poster="/docs/media/build_a_menu/02_opens_menu.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/build_a_menu/02_opens_menu.mp4" type="video/mp4"/></video><figcaption><strong>Give It a Menu</strong><span>From tutorial 4, Build a Menu</span></figcaption></figure><figure class="clip"><video aria-label="Build a Menu, Step 3: Add Buttons to It" class="clip-video" controls="" data-poster="/docs/media/build_a_menu/03_add.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/build_a_menu/03_add.mp4" type="video/mp4"/></video><figcaption><strong>Add Buttons to It</strong><span>From tutorial 4, Build a Menu</span></figcaption></figure><figure class="clip"><video aria-label="Copy and Reuse, Step 3: Tuck Tilt into Nod's Menu" class="clip-video" controls="" data-poster="/docs/media/copy_reuse/03_move.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/copy_reuse/03_move.mp4" type="video/mp4"/></video><figcaption><strong>Tuck Tilt into Nod's Menu</strong><span>From tutorial 11, Copy and Reuse</span></figcaption></figure></div></div></li>
+<li><strong>Show</strong>, in a button's settings: always, or only while a toggle of its
+region, or a property, is on - or off.</li>
+<li><strong>Keep Pose on Switch</strong>, and an operator a click runs, are in a toggle's
+settings.</li>
+</ul>
+<p>They are settings like any other, which a script can write too. What they
+do:</p>
+<ul>
+<li>
+<p><strong>Placed buttons</strong> sit at their own point on the item instead of in the
+row, and stay there as you orbit and pose. They ride the bone the
+region's first button drives - or, where that bone is a control that
+moves none of the region's faces (a Rigify arm's FK forearm while the arm
+is in IK), the deform bone that moves them most. A region's <strong>Behind</strong> setting
+decides what shows of one on the far side: hidden (the default), faint, or
+as it is. Where two overlap, the nearer is drawn over the other, which is
+faint, and the nearer takes the click.</p>
+</li>
+<li>
+<p><strong>3D handles:</strong> a placed drag button can show as a 3D handle instead -
+an arrow or a box on a shaft (for a scale) - each <strong>Short</strong>, <strong>Medium</strong>,
+<strong>Long</strong> or <strong>Extra Long</strong>, starting at the button's place or
+<strong>Centered</strong> on it, a box square to what it rides - a
+double arrow (a head at each end: "go either way"), or the
+shape of a mesh object in the file, modeled pointing along its +Y as a
+bone's custom shape is - which keeps its direction in the scene as you
+orbit. <strong>Handle Size</strong>, beside Button Size, sizes every handle, and
+<strong>Halo</strong> beside it gives their lines a thin dark edge, so they read over a
+light surface or a wireframe; each has
+its own <strong>Size</strong> on top of that (a ring as large as its turn), and can
+have its <strong>Own Color</strong> (an axis's handle in its axis's color) - the one
+set, or <strong>Theme X</strong>, <strong>Theme Y</strong> or <strong>Theme Z</strong>, the axis colors of
+Blender's theme (Preferences &gt; Themes &gt; User Interface), drawn as
+Blender's own Move, Rotate and Scale gizmos draw them - the color itself
+at 60% at rest, all of it under the mouse - so the handles match them and
+follow a theme made easier to see. (An own color's edge is drawn a shade
+brighter, as a button's is.) Its own
+<strong>Interior</strong>, its <strong>Interior Opacity</strong> (at 0 it is transparent, its edges
+alone drawn), its <strong>Opacity</strong>, its <strong>Shaft Falloff</strong> (the shaft solid
+near its head, then fading over the rest toward its root - at 1, gone
+there; a double arrow's halves each fade toward its middle, and only the
+part that shows takes a press) and its
+<strong>Hover Color</strong> (under the mouse,
+filled with it and edged a lighter shade). Its <strong>Behind</strong> decides what shows of it
+where anything is in front of its head - inside the item, or on its far
+side: faint (Ghost Behind, still there to grab), hidden, or as it is; As
+Region follows the region's Behind. Drag along it, whichever way it points on
+screen. A Move along it, or a Rotate it shows the way of, follows the
+mouse exactly, like grabbing an empty; anything else goes at its Speed
+along it. It points along what it drives by default - a Move's axis, the
+way a Rotate turns its spot, or out from the surface - or along an axis
+chosen for it. Pointing at you, it dims and takes no drag - still there
+to see, so you know a control is there: orbit to reach it. Its head - an
+arrowhead, a box - takes a press a few pixels past its outline. Its name
+shows under it. It rides the bone its region's first
+button drives (or that bone's deform bone, as above), so give a bone's handles a region of their own - or sit it
+at an anchor (below). A toggle is always a screen button.</p>
+<p>A placed button can sit at an <strong>anchor</strong> instead of on the surface: a
+point it follows exactly as things move - the head or tail of a bone the
+region's buttons drive, the object's origin, or a point an add-on gives
+for the things it makes. An object without
+that point doesn't show the button, since there it would drive nothing.
+Where handles overlap, as an arrow through a ring at one anchor, the one
+nearest the mouse takes the press.</p>
+<p>A <strong>Quad Arrow</strong> is two double arrows crossing at the button's place,
+one for each of its directions: Up / Down's commands along one arrow,
+Left / Right's along the other, each pointing its command's way. A drag
+is split between them as they lie on screen, so a drag on the slant
+drives both - or, with Drags Prefer Single Direction, the one you set off
+along, Alt switching to the other. An arm pointing at you dims on its
+own.</p>
+<p>A handle can also be a <strong>ring</strong> about the axis a Rotate turns on. Sweep
+the mouse around its middle and the Rotate turns by the angle you swept,
+as R does. Seen
+nearly edge on, it turns as a wheel does, by dragging along its rim. Only
+the ring takes the press, so its middle still reaches the item.</p><div class="doc-clips"><p class="kicker">Examples</p><div class="clip-row"><figure class="clip"><video aria-label="3D Handles, Step 4: Bend on a Ring" class="clip-video" controls="" data-poster="/docs/media/handles/04_ring.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/handles/04_ring.mp4" type="video/mp4"/></video><figcaption><strong>Bend on a Ring</strong><span>From tutorial 9, 3D Handles</span></figcaption></figure><figure class="clip"><video aria-label="3D Handles, Step 5: Turn It" class="clip-video" controls="" data-poster="/docs/media/handles/05_turn.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/handles/05_turn.mp4" type="video/mp4"/></video><figcaption><strong>Turn It</strong><span>From tutorial 9, 3D Handles</span></figcaption></figure></div></div>
+<div class="doc-clips"><p class="kicker">Examples</p><div class="clip-row"><figure class="clip"><video aria-label="3D Handles, Step 1: Reach as a Handle" class="clip-video" controls="" data-poster="/docs/media/handles/01_handle.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/handles/01_handle.mp4" type="video/mp4"/></video><figcaption><strong>Reach as a Handle</strong><span>From tutorial 9, 3D Handles</span></figcaption></figure><figure class="clip"><video aria-label="3D Handles, Step 2: An Arrow Each Way" class="clip-video" controls="" data-poster="/docs/media/handles/02_quad.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/handles/02_quad.mp4" type="video/mp4"/></video><figcaption><strong>An Arrow Each Way</strong><span>From tutorial 9, 3D Handles</span></figcaption></figure><figure class="clip"><video aria-label="3D Handles, Step 3: Haul Along It" class="clip-video" controls="" data-poster="/docs/media/handles/03_haul.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/handles/03_haul.mp4" type="video/mp4"/></video><figcaption><strong>Haul Along It</strong><span>From tutorial 9, 3D Handles</span></figcaption></figure></div></div></li>
+<li>
+<p><strong>Menus:</strong> a button with a small circle at its upper right opens a menu.
+Click it to show the buttons in it, in a ring around it, the rest hidden.
+Click it again to go back a level, press <strong>Esc</strong> to close the whole menu,
+or move off the item. A drag on it still runs its own commands.
+<strong>Shift+click</strong> opens a menu pinned: it stays open wherever the mouse goes,
+until you close it all the way out or press Esc. Undo and redo leave it
+pinned. A region pinned before its menu opened stays pinned when the menu
+closes. A menu that <strong>Stays Open</strong> is pinned by a plain click, and a click
+in empty space closes it too - for a menu of 3D handles, which you reach
+across other items.</p>
+<div class="doc-clips"><p class="kicker">Examples</p><div class="clip-row"><figure class="clip"><video aria-label="Build a Menu, Step 7: Open It" class="clip-video" controls="" data-poster="/docs/media/build_a_menu/07_open.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/build_a_menu/07_open.mp4" type="video/mp4"/></video><figcaption><strong>Open It</strong><span>From tutorial 4, Build a Menu</span></figcaption></figure><figure class="clip"><video aria-label="Menus in Use, Step 1: Haul in the Menu" class="clip-video" controls="" data-poster="/docs/media/menus_in_use/01_haul.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/menus_in_use/01_haul.mp4" type="video/mp4"/></video><figcaption><strong>Haul in the Menu</strong><span>From tutorial 5, Menus in Use</span></figcaption></figure><figure class="clip"><video aria-label="Menus in Use, Step 2: Pin It with Shift" class="clip-video" controls="" data-poster="/docs/media/menus_in_use/02_pin.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/menus_in_use/02_pin.mp4" type="video/mp4"/></video><figcaption><strong>Pin It with Shift</strong><span>From tutorial 5, Menus in Use</span></figcaption></figure><figure class="clip"><video aria-label="Menus in Use, Step 3: Make It Stay Open" class="clip-video" controls="" data-poster="/docs/media/menus_in_use/03_stays_open.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/menus_in_use/03_stays_open.mp4" type="video/mp4"/></video><figcaption><strong>Make It Stay Open</strong><span>From tutorial 5, Menus in Use</span></figcaption></figure><figure class="clip"><video aria-label="Menus in Use, Step 4: A Menu Inside a Menu" class="clip-video" controls="" data-poster="/docs/media/menus_in_use/04_sub_menu.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/menus_in_use/04_sub_menu.mp4" type="video/mp4"/></video><figcaption><strong>A Menu Inside a Menu</strong><span>From tutorial 5, Menus in Use</span></figcaption></figure></div></div></li>
+<li>
+<p><strong>Buttons that come and go:</strong> a button can show only while a toggle of its
+region, or a property, is on, or only while it is off - an arm's FK
+buttons in FK, its IK buttons in IK. A drag on the region runs the first
+drag button showing.</p>
+<div class="doc-clips"><p class="kicker">Examples</p><div class="clip-row"><figure class="clip"><video aria-label="Toggles and Show When, Step 4: Bend in FK Only" class="clip-video" controls="" data-poster="/docs/media/toggles/04_bend_on.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/toggles/04_bend_on.mp4" type="video/mp4"/></video><figcaption><strong>Bend in FK Only</strong><span>From tutorial 6, Toggles and Show When</span></figcaption></figure><figure class="clip"><video aria-label="Toggles and Show When, Step 5: Reach in IK Only" class="clip-video" controls="" data-poster="/docs/media/toggles/05_reach_off.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/toggles/05_reach_off.mp4" type="video/mp4"/></video><figcaption><strong>Reach in IK Only</strong><span>From tutorial 6, Toggles and Show When</span></figcaption></figure></div></div></li>
+<li>
+<p><strong>Keeping the pose:</strong> a toggle can switch without a jump, each bone of a
+list taking its partner's pose as it switches - an IK / FK switch - and
+the IK pole set where the elbow or knee points.</p>
+</li>
+<li>
+<p><strong>An operator on a click:</strong> a button can run a rig's own operator. One
+that opens, saves or runs files or scripts, or changes Blender's
+settings, is never run from a button.</p>
+</li>
+</ul><div class="doc-clips"><p class="kicker">Examples</p><div class="clip-row"><figure class="clip"><video aria-label="Buttons on the Item, Step 1: Put Reach on the Forearm" class="clip-video" controls="" data-poster="/docs/media/on_item/01_on_item.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/on_item/01_on_item.mp4" type="video/mp4"/></video><figcaption><strong>Put Reach on the Forearm</strong><span>From tutorial 8, Buttons on the Item</span></figcaption></figure><figure class="clip"><video aria-label="Buttons on the Item, Step 3: It Rides the Arm" class="clip-video" controls="" data-poster="/docs/media/on_item/03_ride.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/on_item/03_ride.mp4" type="video/mp4"/></video><figcaption><strong>It Rides the Arm</strong><span>From tutorial 8, Buttons on the Item</span></figcaption></figure><figure class="clip"><video aria-label="Buttons on the Item, Step 4: Seen From Behind" class="clip-video" controls="" data-poster="/docs/media/on_item/04_behind.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/on_item/04_behind.mp4" type="video/mp4"/></video><figcaption><strong>Seen From Behind</strong><span>From tutorial 8, Buttons on the Item</span></figcaption></figure></div></div>
+<p>The panel's tree marks a placed button, and one that opens a menu. A
+menu's buttons can be colored together; a menu without a color of its own
+takes its button's.</p>
+<h2 id="tutorials">Tutorials</h2>
+<p>At Help's <strong>Learn</strong>, the top of the Kneady tab has <strong>Start a Tutorial</strong>: a
+menu of every tutorial, each one's tooltip saying what it teaches. It isn't
+there at Inform or Quiet.</p>
+<p>A tutorial plays in a panel down the 3D view's left side, where the toolbar
+is (the toolbar comes back when the panel is folded with its ^):</p>
+<ul>
+<li>At the top, short clips of the gesture, or still images. The arrows under
+them, or a dot each, go from one to the next. Inside the arrows,
+<strong>Pause</strong> (or a click on the clip) pauses the one showing, and <strong>Loop</strong>
+plays it again and again; a clip that stays on its last frame starts over
+at Play. <strong>Show Me</strong> under a clip opens the place it shows - a sidebar
+tab, or a tab of the Properties editor. Rest the mouse on the clip and it
+grows to twice its size, over the text and the view, until the mouse
+moves off it.</li>
+<li>A tutorial with a playlist has a phone in its title row: a QR code for
+your phone's camera, to watch the whole tutorial there. A click on the
+code goes back.</li>
+<li>Under them, the step's text, the clip's paragraph lit and scrolled into
+view. The mouse wheel over the text scrolls it.</li>
+<li>At the bottom, <strong>Back</strong>, <strong>Reset</strong> (the step set up again) and <strong>Next</strong>.
+A step that watches for what it asks ticks itself off - <strong>Done</strong> - and
+Next turns blue; half a second later the next step comes on by itself. A
+step already done when you come to it waits for Next. The last step, done,
+says <strong>Completed!</strong> Each new step flashes in, so the change is seen.</li>
+</ul>
+<p>Fields the step is about light up in Kneady's own panels. A tutorial with a
+<strong>practice scene</strong> opens a copy of it: Blender first asks to save your file,
+as it does before opening any file, and <strong>Return to My File</strong> - or the
+panel's x - opens your file again. Nothing done in the practice scene is
+kept. Opening a file clears Blender's undo history, so your undo steps from
+before don't come back with it.</p>
+<p>Most clips and images come with Kneady. Some tutorials keep theirs online,
+downloaded when the tutorial starts and kept, so each comes once. That needs
+<strong>Allow Online Access</strong> (Preferences &gt; System), which is off in a new
+Blender; until it is on, the panel says so in the clip's place, and a click
+there opens Preferences. Where a clip can't be shown, a <strong>Watch on YouTube</strong>
+button may take its place, opening it in your browser.</p>
+<p><strong>Writing tutorials:</strong> the pencil beside Start a Tutorial turns <strong>Edit
+mode</strong> on - new, delete, and every part of a tutorial and its steps, each
+part caught from the scene as it is with <strong>Use Current</strong>, the panel over
+the view showing the tutorial as you write it; a clip's Trim is the frames
+of it that play. <strong>Save</strong>, then <strong>Try</strong>. The
+<a href="/docs/writing-a-tutorial/">tutorial guide</a> has the details.</p><div class="doc-clips"><p class="kicker">Examples</p><div class="clip-row"><figure class="clip"><video aria-label="Write a Tutorial, Step 1: Turn On Edit Mode" class="clip-video" controls="" data-poster="/docs/media/write_tutorial/01_edit.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/write_tutorial/01_edit.mp4" type="video/mp4"/></video><figcaption><strong>Turn On Edit Mode</strong><span>From tutorial 13, Write a Tutorial</span></figcaption></figure><figure class="clip"><video aria-label="Write a Tutorial, Step 5: Try It" class="clip-video" controls="" data-poster="/docs/media/write_tutorial/05_try.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/write_tutorial/05_try.mp4" type="video/mp4"/></video><figcaption><strong>Try It</strong><span>From tutorial 13, Write a Tutorial</span></figcaption></figure></div></div>
+<h2 id="files-copies-and-linked-characters">Files, copies and linked characters</h2>
+<p>Regions are stored on the object, and their faces in a face attribute on
+the mesh, <code>kneady_region</code>.</p>
+<ul>
+<li>
+<p><strong>Saving and appending:</strong> they stay with the mesh.</p>
+</li>
+<li>
+<p><strong>Shift+D</strong> copies them with the mesh. <strong>Alt+D</strong> shares the mesh's
+faces, and the copy has its own list. A command that drives the hovered
+object drives the copy you drag.</p>
+</li>
+<li>
+<p><strong>Join:</strong> Blender keeps only the active object's region settings. The
+joined faces keep their marks. The panel reports faces carrying regions
+the object doesn't list, and <strong>Make Them Regions</strong> turns them back into
+regions, whose buttons you set up again.</p>
+</li>
+<li>
+<p><strong>Renaming an object</strong> changes nothing. Renaming a bone, modifier input
+or property that a command names leaves the command pointing at the old
+name, and the command says which. Choose it again.</p>
+</li>
+<li>
+<p><strong>Linked characters:</strong> make the regions in the character's own file.
+Link the character into a shot and make a library override (Object &gt;
+Library Override &gt; Make). The override's mesh has the regions, and their
+commands drive the override's rig.</p>
+<p>Blender doesn't keep a region added to an override: it is gone when the
+file is reopened. So on a linked or overridden object, + is refused with
+that reason, and the region settings are greyed out.</p>
+</li>
+</ul>
+<h2 id="modifiers">Modifiers</h2>
+<p>Kneady reads regions from the mesh as it is shown, after its modifiers.</p>
+<ul>
+<li><strong>Subdivision Surface, Multiresolution, Mirror, Solidify, Bevel and
+Triangulate</strong> keep every face's region.</li>
+<li><strong>Decimate</strong> keeps the regions on the faces it keeps. Where it merges
+faces across a region's edge, the merged face takes one side's region,
+so the edges shift.</li>
+<li><strong>Remesh</strong> builds new faces and keeps no regions while it is on.</li>
+</ul>
+<p>Applying a modifier keeps the regions where the modifier would.</p>
+<h2 id="large-meshes">Large meshes</h2>
+<ul>
+<li>Hovering costs about 2 ms per mouse move on a million-face mesh.</li>
+<li>The first hover of a very dense mesh, or the first after it changes,
+prepares its paint. That takes about a second on a million faces, and a
+few hundredths of a second on a typical character.</li>
+<li>Edit Faces prepares its paint when you enter and after each Assign, not
+on every redraw.</li>
+<li>While the animation plays, regions aren't painted, so a hovered animated
+character doesn't slow playback.</li>
+</ul>
+<h2 id="limits">Limits</h2>
+<ul>
+<li>Regions belong to <strong>mesh objects</strong>. Curves, text and surfaces can't have
+them, but a mesh's command can drive them.</li>
+<li>A linked character's regions are made in its own file (see above).</li>
+<li>Remesh hides regions while it is on, and Decimate shifts their edges.</li>
+</ul>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<ul>
+<li><strong>Nothing is painted when I hover.</strong> Check that Kneady is on, that you
+are in Object or Pose mode, that the object is visible, and that it has
+regions with faces: the panel says "No faces yet" when a region has
+none.</li>
+<li><strong>The drag does nothing.</strong> Look under the command in the panel for a
+reason in red, and at the status bar during the drag. The most common
+cause is an FK control dragged while the limb is in IK.</li>
+<li><strong>Kneady switched itself off.</strong> Another add-on can carry its own copy of
+Kneady. While it is on, it switches this Kneady off and says so, so the
+two never run at once; your regions and buttons work the same in either.
+This Kneady comes back on when the other add-on is turned off.</li>
+<li><strong>Paste Button or Paste All Buttons is greyed out.</strong> Nothing of that kind has been copied yet. A copy
+made in this Blender session stays ready to paste; one made in another
+session is on the system clipboard only until something else is copied.</li>
+</ul>
+</div></article></div>
+  </main>
+
+  <footer class="site-foot">
+<span>© 2026 Space Squirrel</span>
+<nav aria-label="Elsewhere">
+<a href="/docs/">Docs</a>
+<a href="#">YouTube</a>
+<a href="https://discord.gg/cDD3acK6bM">Discord</a>
+<a href="/">Home</a>
+</nav>
+</footer>
+</div>
+</body>
+</html>
