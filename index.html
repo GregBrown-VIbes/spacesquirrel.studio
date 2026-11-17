@@ -37,19 +37,23 @@
           <a class="btn btn-quiet" href="#kneady">Watch the demo</a>
         </div>
       </div>
-      <div class="clay-stage" role="img" aria-label="A lump of clay you can drag to reshape">
+      <div class="clay-stage" tabindex="0" role="application" aria-label="A Kneady control to try: arrow keys resize the clay, Enter changes its shape">
         <svg viewBox="0 0 500 500" aria-hidden="true">
           <defs>
-            <radialGradient id="clayLight" cx="0.4" cy="0.35" r="0.85">
-              <stop id="glowStop" offset="0" stop-color="#E7987A"/>
+            <radialGradient id="clayLight" cx="0.4" cy="0.32" r="0.85">
+              <stop offset="0" stop-color="#E7987A"/>
               <stop offset="0.5" stop-color="#B9573A"/>
               <stop offset="1" stop-color="#93452D"/>
             </radialGradient>
           </defs>
-          <ellipse cx="250" cy="438" rx="150" ry="16" fill="#1C2440" opacity=".14"/>
-          <path id="clay" fill="url(#clayLight)" stroke="#1C2440" stroke-width="4"/>
+          <ellipse cx="250" cy="452" rx="150" ry="14" fill="#1C2440" opacity=".14"/>
+          <path id="clay" fill="url(#clayLight)" stroke="#1C2440" stroke-width="4" stroke-linejoin="round"/>
+          <g id="clayButton" transform="translate(250,235)" role="button" aria-label="Change shape">
+            <circle r="30" fill="#F3F6FA" stroke="#1C2440" stroke-width="4"/>
+            <path id="clayButtonIcon" fill="#B9573A"/>
+          </g>
         </svg>
-        <span class="clay-hint">Go on, pull it</span>
+        <span class="clay-hint">Hover over the clay</span>
       </div>
     </section>
 
