@@ -118,3 +118,7 @@ kbd{font:700 .9em var(--body);background:var(--raised);border:1px solid #555;bor
 .site-foot a{color:var(--ink-soft)}
 .about-links a{color:var(--ink);text-underline-offset:3px}.about-links a:hover{color:#fff}
 .product-logo{display:block;width:min(100%,340px);height:auto;margin:0 0 1.75rem}
+.site-nav{align-items:center}
+.site-nav .product-link img{display:block;height:30px;width:auto;transition:transform .15s}
+.site-nav .product-link:hover{text-decoration:none}
+.site-nav .product-link:hover img{transform:translateY(-1px) rotate(-2deg)}
