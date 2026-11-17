@@ -4,13 +4,13 @@
   --clay:#B9573A; --clay-dark:#8E3F27; --acorn:#E2A23B; --blush:#E98A6B;
   --radius-lg:28px; --radius-sm:10px;
   --measure:62ch;
-  --display:"Bricolage Grotesque", "Trebuchet MS", sans-serif;
-  --body:"Atkinson Hyperlegible", "Segoe UI", sans-serif;
+  --display:"Instrument Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --body:"Instrument Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--sky);color:var(--ink);font:400 1.125rem/1.6 var(--body);-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--sky);color:var(--ink);font:400 1.125rem/1.55 var(--body);-webkit-font-smoothing:antialiased}
 img,iframe{max-width:100%;display:block}
 a{color:var(--clay-dark);text-underline-offset:.18em}
 a:hover{color:var(--ink)}
@@ -27,9 +27,9 @@ a:hover{color:var(--ink)}
 .site-nav a:hover,.site-nav a[aria-current]{text-decoration:underline;text-decoration-thickness:3px;text-decoration-color:var(--acorn)}
 
 /* type */
-h1,h2,h3{font-family:var(--display);line-height:1.02;letter-spacing:-.025em;margin:0 0 .5em}
-h1{font-size:clamp(2.75rem,7vw,5.25rem);font-weight:800;font-stretch:90%}
-h2{font-size:clamp(2rem,4vw,3rem);font-weight:800}
+h1,h2,h3{font-family:var(--display);line-height:1.05;letter-spacing:-.03em;margin:0 0 .5em}
+h1{font-size:clamp(2.75rem,7vw,5.25rem);font-weight:700}
+h2{font-size:clamp(2rem,4vw,3rem);font-weight:700}
 h3{font-size:1.4rem;font-weight:700;letter-spacing:-.01em}
 p{margin:0 0 1em;max-width:var(--measure)}
 .lede{font-size:1.3rem;color:var(--ink-soft)}
@@ -82,7 +82,7 @@ section{padding:4rem 0}
 
 /* about */
 .about{display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:start}
-.portrait{width:120px;height:120px;border-radius:50%;background:var(--sky-deep);display:grid;place-items:center;font:800 2.6rem/1 var(--display);color:var(--ink)}
+.portrait{width:120px;height:120px;border-radius:50%;background:var(--sky-deep);display:grid;place-items:center;font:700 2.6rem/1 var(--display);color:var(--ink)}
 @media (max-width:620px){.about{grid-template-columns:1fr}}
 
 /* signup */
