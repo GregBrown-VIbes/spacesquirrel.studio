@@ -116,3 +116,4 @@ kbd{font:700 .9em var(--body);background:var(--raised);border:1px solid #555;bor
 .site-foot{padding:3rem 0 4rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;color:var(--ink-soft);font-size:1rem}
 .site-foot nav{display:flex;gap:1.2rem;flex-wrap:wrap}
 .site-foot a{color:var(--ink-soft)}
+.about-links a{color:var(--ink);text-underline-offset:3px}.about-links a:hover{color:#fff}
