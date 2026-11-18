@@ -17,12 +17,29 @@ a:hover{color:var(--ink)}
 :focus-visible{outline:3px solid var(--acorn);outline-offset:3px;border-radius:6px}
 .wrap{width:min(1120px,100% - 2rem);margin-inline:auto}
 
-/* header */
-.site-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.25rem 0}
+/* header: it stays at the top as the page scrolls, so Support is always there.
+   On a phone or tablet the wordmark scrolls away and the row of links stays (top < 0).
+   --head-stuck is the height left on screen, which anchors scroll clear of.
+   The border-image paints the bar's background out to both edges of the window
+   without widening the page; a line under it fades in once the page scrolls. */
+:root{--head-stuck:4.375rem}
+html{scroll-padding-top:calc(var(--head-stuck) + .5rem)}
+@property --head-edge{syntax:"<color>";inherits:false;initial-value:#3D3D3D}
+.site-head{position:sticky;top:0;z-index:20;--head-edge:var(--line);border-image:linear-gradient(to top,var(--head-edge) 1px,var(--sky) 1px) fill 0//0 100vmax;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.25rem 0}
+@supports (animation-timeline:scroll()){
+  .site-head{animation:head-edge linear both;animation-timeline:scroll();animation-range:0 3rem}
+  @keyframes head-edge{from{--head-edge:var(--sky)}}
+}
 .wordmark{font:800 1.5rem/1 var(--display);letter-spacing:-.02em;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:.55rem}
 .wordmark img{height:30px;width:auto;display:block}
-@media (max-width:620px){.site-head{flex-direction:column;align-items:flex-start;gap:.9rem}.wordmark img{height:auto;width:min(100%,340px)}.site-nav{gap:.35rem 1rem;font-size:1rem}}
 .site-nav{display:flex;gap:1.4rem;flex-wrap:wrap}
+@media (max-width:860px){
+  :root{--head-stuck:3.4rem;--mark-w:min(100vw - 2rem,340px)}
+  .site-head{flex-direction:column;align-items:flex-start;gap:.9rem;padding:1.25rem 0 .75rem;top:calc(-1.4rem - var(--mark-w) * 127 / 1933)}
+  .wordmark img{width:var(--mark-w);height:calc(var(--mark-w) * 127 / 1933)}
+  .site-nav{gap:.35rem 1rem;font-size:1rem}
+}
+@media (max-width:360px){.site-nav{gap:.35rem .6rem}.site-head .site-nav .product-link img{height:26px}}
 .site-nav a{color:var(--ink);text-decoration:none;font-weight:700}
 .site-nav a:hover,.site-nav a[aria-current]{text-decoration:underline;text-decoration-thickness:3px;text-decoration-color:var(--acorn)}
 
@@ -124,7 +141,7 @@ kbd{font:700 .9em var(--body);background:var(--raised);border:1px solid #555;bor
 .site-nav .product-link:hover img{transform:translateY(-1px) rotate(-2deg)}
 
 /* docs (made by tools/build_docs.py) */
-.skip{position:absolute;left:-9999px;top:0;background:var(--acorn);color:#1D1D1D;padding:.6rem 1rem;border-radius:0 0 var(--radius-sm) 0;font-weight:700;z-index:10}
+.skip{position:absolute;left:-9999px;top:0;background:var(--acorn);color:#1D1D1D;padding:.6rem 1rem;border-radius:0 0 var(--radius-sm) 0;font-weight:700;z-index:30}
 .skip:focus{left:0}
 .crumbs{font-size:.95rem;color:var(--ink-soft);padding:.25rem 0 0}
 .crumbs a{color:var(--ink-soft)}
@@ -152,7 +169,7 @@ kbd{font:700 .9em var(--body);background:var(--raised);border:1px solid #555;bor
 
 /* guide and writing pages */
 .doc-layout{display:grid;grid-template-columns:15rem minmax(0,1fr);gap:3rem;align-items:start}
-.toc{position:sticky;top:1rem;max-height:calc(100vh - 2rem);overflow:auto;font-size:.92rem;padding-right:.5rem}
+.toc{position:sticky;top:calc(var(--head-stuck) + 1rem);max-height:calc(100vh - var(--head-stuck) - 2rem);overflow:auto;font-size:.92rem;padding-right:.5rem}
 .toc ol{list-style:none;margin:0;padding:0}
 .toc ol ol{padding-left:.9rem;margin:.2rem 0 .4rem}
 .toc li{margin:.25rem 0}
