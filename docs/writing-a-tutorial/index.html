@@ -89,14 +89,14 @@ Tutorial plays what is saved: started with edits not saved yet, it asks
 </ul>
 </li>
 </ol><div class="doc-clips"><p class="kicker">Examples</p><div class="clip-row"><figure class="clip"><video aria-label="Write a Tutorial, Step 1: Turn On Edit Mode" class="clip-video" controls="" data-poster="/docs/media/write_tutorial/01_edit.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/write_tutorial/01_edit.mp4" type="video/mp4"/></video><figcaption><strong>Turn On Edit Mode</strong><span>From tutorial 13, Write a Tutorial</span></figcaption></figure><figure class="clip"><video aria-label="Write a Tutorial, Step 2: Make One" class="clip-video" controls="" data-poster="/docs/media/write_tutorial/02_new.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/write_tutorial/02_new.mp4" type="video/mp4"/></video><figcaption><strong>Make One</strong><span>From tutorial 13, Write a Tutorial</span></figcaption></figure><figure class="clip"><video aria-label="Write a Tutorial, Step 3: Write Its Step" class="clip-video" controls="" data-poster="/docs/media/write_tutorial/03_write.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/write_tutorial/03_write.mp4" type="video/mp4"/></video><figcaption><strong>Write Its Step</strong><span>From tutorial 13, Write a Tutorial</span></figcaption></figure><figure class="clip"><video aria-label="Write a Tutorial, Step 4: Say When It's Done" class="clip-video" controls="" data-poster="/docs/media/write_tutorial/04_done.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/write_tutorial/04_done.mp4" type="video/mp4"/></video><figcaption><strong>Say When It's Done</strong><span>From tutorial 13, Write a Tutorial</span></figcaption></figure><figure class="clip"><video aria-label="Write a Tutorial, Step 5: Try It" class="clip-video" controls="" data-poster="/docs/media/write_tutorial/05_try.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/write_tutorial/05_try.mp4" type="video/mp4"/></video><figcaption><strong>Try It</strong><span>From tutorial 13, Write a Tutorial</span></figcaption></figure></div></div>
-<p><strong>A step that asks for something</strong> - haul a Kneady button, click one, hover
+<p><strong>A step that asks for something</strong> - drag a Kneady button, click one, hover
 a region, press a panel's button, change a field, select an object - says
-so under Done When: an <strong>Action</strong> (a Kneady button hauled or clicked, on
-which region and object, or any other operator by its name, as
-<code>object.mode_set</code>), <strong>Hovered</strong> (a region), a <strong>Property</strong> that becomes a
-value or changes, the <strong>Mode</strong>, the <strong>Active Object</strong> or what is
-<strong>Selected</strong>. Its Start sets the scene up so it can be done; Highlight
-lights the field it is about.</p>
+so under Done When: an <strong>Action</strong> (a Kneady button dragged or clicked -
+its How says Hauled, Clicked, or Hauled or Clicked - on which region and
+object, or any other operator by its name, as <code>object.mode_set</code>),
+<strong>Hovered</strong> (a region), a <strong>Property</strong> that becomes a value or changes, the
+<strong>Mode</strong>, the <strong>Active Object</strong> or what is <strong>Selected</strong>. Its Start sets the
+scene up so it can be done; Highlight lights the field it is about.</p>
 <p><strong>The panel shows it as you write.</strong> While Edit mode is on, the tutorial's
 panel over the view shows the tutorial being edited, unsaved changes and
 all, at the step selected in the list - its header says <strong>Editing</strong>. Type a
@@ -401,7 +401,7 @@ itself off. Each is a path and one test, or a state on its own:</p>
 </tr>
 <tr>
 <td><code>{"operator": "kneady.drag", "with": {"target": "Arm", "region": 1, "button": 0}, "moved": true}</code></td>
-<td>that Kneady button was hauled since the step began (<code>"moved": false</code>: clicked; leave it out for either). Only what <code>with</code> names is checked</td>
+<td>that Kneady button was dragged since the step began (<code>"moved": false</code>: clicked; leave it out for either). Only what <code>with</code> names is checked</td>
 </tr>
 <tr>
 <td><code>{"operator": "object.mode_set", "with": {"mode": "POSE"}}</code></td>
@@ -450,9 +450,10 @@ their undo steps. A tutorial without a practice scene runs in whatever file
 is open, so its starts should change as little as possible.</p>
 <ul>
 <li>
-<p>The editor's <strong>Use This File</strong> makes the file that is open the practice
-scene. For Kneady's own tutorials, make it with a script instead, so it
-can be made again. The shared scenes in <code>tutorials/_scenes/</code> come from
+<p>In the editor, <strong>the file icon (Use This File)</strong> beside Practice Scene
+makes the file that is open the practice scene. For Kneady's own
+tutorials, make it with a script instead, so it can be made again. The
+shared scenes in <code>tutorials/_scenes/</code> come from
 <code>dev/scenes/</code>:</p>
 <ul>
 <li><code>cube</code>: Blender's default scene.</li>
@@ -466,8 +467,8 @@ bodies are built around their bones; nothing comes from elsewhere.</p>
 </li>
 <li>
 <p>Save it with <strong>the oldest Blender Kneady supports</strong> (4.2), so every
-supported Blender opens it. Use This File saves with the Blender that is
-running, and says so.</p>
+supported Blender opens it. The file icon (Use This File) saves with the
+Blender that is running, and says so.</p>
 </li>
 <li>
 <p>Its object, bone and region names are fixed: the steps' checks and starts
@@ -490,8 +491,9 @@ and its attribution included.</p>
 </ul>
 <h2 id="trying-one">Trying one</h2>
 <ul>
-<li>In the editor, <strong>Try This Step</strong>. Or set Help to Learn and pick it from
-<strong>Start a Tutorial</strong>, which opens its practice scene as a person would.</li>
+<li>In the editor, <strong>Try</strong>: it saves the tutorial and plays it from the step
+selected. Or set Help to Learn and pick it from <strong>Start a Tutorial</strong>,
+which opens its practice scene as a person would.</li>
 <li><code>tests/test_tutorials.py</code> checks every shipped tutorial reads without a
 problem, and that every path it checks, sets or lights is there in its
 practice scene.</li>
