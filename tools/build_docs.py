@@ -422,23 +422,23 @@ def build_index(shell, tuts, guide_toc, version):
         f'<span class="t-sum">{esc(t.get("summary") or "")}</span></li>' for t in tuts)
     body = f"""<header class="doc-head">
 <h1>Kneady Controls docs</h1>
-<p class="lede">How Kneady Controls works, part by part: the guide, the tutorials that play inside Blender, and how to write your own.</p>
+<p class="lede">The Kneady Controls guide, the tutorials that play inside Blender, and how to write tutorials of your own.</p>
 <p class="edition">For {ver}, the free version on extensions.blender.org. Anything that needs <strong>Kneady Controls Pro</strong> is marked <span class="badge-pro">Pro</span>.</p>
 </header>
 <div class="doc-index">
   <div class="band">
     <h2 id="guide"><a href="/docs/guide/">Guide</a></h2>
-    <p>Everything Kneady does, in the order you meet it, with clips from the tutorials as examples.</p>
+    <p>How each part of Kneady works, with clips from the tutorials as examples.</p>
     <ol class="guide-list">{g}</ol>
   </div>
   <div>
     <h2 id="tutorials">Tutorials in Kneady</h2>
-    <p>Kneady teaches inside Blender. With <strong>Help</strong> set to <strong>Learn</strong> (where Kneady starts), <strong>Start a Tutorial</strong> at the top of the Kneady tab lists these. Each plays in a panel beside the view, in a practice scene of its own, and ticks its steps off as you do them. The guide uses their clips as examples. See <a href="/docs/guide/#tutorials">Tutorials</a> in the guide.</p>
+    <p>These tutorials play inside Blender. When <strong>Help</strong> is set to <strong>Learn</strong> (the default), they are listed under <strong>Start a Tutorial</strong> at the top of the Kneady tab. Each one plays in a panel next to the view, in its own practice scene, and checks off each step as you complete it. The guide uses their clips as examples. See <a href="/docs/guide/#tutorials">Tutorials</a> in the guide.</p>
     <ol class="tut-list">{rows}</ol>
   </div>
   <div class="band">
     <h2 id="writing"><a href="/docs/writing-a-tutorial/">Writing a tutorial</a></h2>
-    <p>For add-on makers, riggers and character sellers: write tutorials in the Kneady tab, ship them with an add-on, or attach them to a rig so they travel in its file.</p>
+    <p>For add-on developers, riggers and character sellers. You can write tutorials in the Kneady tab, include them with an add-on, or attach them to a rig so they are saved in its file.</p>
   </div>
 </div>
 <p class="fineprint">The tutorials' clips and practice scenes are public domain (CC0 1.0): use them for anything. Questions go to the <a href="https://discord.gg/cDD3acK6bM">Space Squirrel Discord</a>.</p>"""
@@ -482,11 +482,11 @@ def main():
     guide_toc = build_markdown_page(
         shell, source, media, tuts, "GUIDE.md", "guide", "guide",
         "The Kneady Controls guide: regions, buttons, commands, dragging, posing, menus, 3D handles and more.",
-        "Guide", "Everything Kneady does, in the order you meet it. Clips from the tutorials sit beside the parts they show.")
+        "Guide", "How each part of Kneady works, with clips from the tutorials next to the parts they show.")
     build_markdown_page(
         shell, source, media, tuts, "TUTORIALS.md", "writing", "writing-a-tutorial",
         "How to write a Kneady tutorial: in the Kneady tab, or as tutorial.json by hand.",
-        "Writing a tutorial", "For add-on makers, riggers and character sellers. Kneady tutorials are data: a folder with a tutorial.json, its clips and a practice scene.")
+        "Writing a tutorial", "For add-on developers, riggers and character sellers. A Kneady tutorial is a folder with a tutorial.json file, its clips and a practice scene.")
     build_index(shell, tuts, guide_toc, version)
     media.finish()
     print(f"Done: {len(tuts)} tutorials, guide, writing a tutorial.")

@@ -9,21 +9,21 @@
 
   "clips": {
     "guide": [
-      {"section": "turning-kneady-on", "after": "Help is yours", "clips": ["help_levels/01_learn", "help_levels/02_inform", "help_levels/03_quiet"]},
-      {"section": "turning-kneady-on", "after": "At Help's Learn or Inform", "clips": ["look/02_labels"]},
+      {"section": "turning-kneady-on", "after": "Help is a personal setting", "clips": ["help_levels/01_learn", "help_levels/02_inform", "help_levels/03_quiet"]},
+      {"section": "turning-kneady-on", "after": "At the Learn and Inform levels, resting", "clips": ["look/02_labels"]},
       {"section": "turning-kneady-on", "after": "While a region is pinned", "clips": ["look/05_outline"]},
       {"section": "regions", "after": "Removing a region also clears", "clips": ["quick_start/01_select", "quick_start/02_region"]},
       {"section": "which-faces", "clips": ["quick_start/03_assign"]},
-      {"section": "buttons", "after": "A region's buttons, up to eight", "clips": ["change_controls/01_pick"]},
-      {"section": "buttons", "after": "Row: left to right", "clips": ["look/01_column"]},
-      {"section": "buttons", "after": "A name, shown under its circle", "clips": ["look/03_text", "look/04_square"]},
+      {"section": "buttons", "after": "A region can have up to eight buttons", "clips": ["change_controls/01_pick"]},
+      {"section": "buttons", "after": "Row: Left to right", "clips": ["look/01_column"]},
+      {"section": "buttons", "after": "Name: Shown under the circle", "clips": ["look/03_text", "look/04_square"]},
       {"section": "tips", "clips": ["tips/01_read", "tips/02_words", "tips/03_message", "tips/04_help"]},
-      {"section": "toggles", "after": "A boolean is switched", "clips": ["toggles/01_add", "toggles/02_switch", "toggles/03_click"]},
+      {"section": "toggles", "after": "A boolean switches", "clips": ["toggles/01_add", "toggles/02_switch", "toggles/03_click"]},
       {"section": "copy-and-paste", "after": "Copy Button and Paste Button", "clips": ["copy_reuse/01_copy", "copy_reuse/04_copy_all", "copy_reuse/05_hips"]},
       {"section": "viewport-edit", "clips": ["viewport_edit/01_pick", "viewport_edit/02_add", "viewport_edit/03_arrange", "viewport_edit/04_remove"]},
       {"section": "commands", "after": "Kind", "clips": ["drive_more/01_shape_key", "drive_more/02_modifier_input"]},
       {"section": "commands", "after": "Axis: X, Y or Z", "clips": ["change_controls/02_slide", "change_controls/03_grow", "change_controls/04_speed"]},
-      {"section": "commands", "after": "Several at once", "clips": ["drive_more/04_two_at_once"]},
+      {"section": "commands", "after": "Add Command adds another command", "clips": ["drive_more/04_two_at_once"]},
       {"section": "dragging", "after": "Rotate and Move follow the mouse", "clips": ["quick_start/04_haul", "change_controls/05_try", "drive_more/05_alt"]},
       {"section": "notes-for-common-rigs", "after": "Rig", "clips": ["toggles/06_try"]},
       {"section": "beyond-the-row-placed-buttons-3d-handles-and-menus", "after": "Place on Surface", "clips": ["on_item/02_place"]},
@@ -33,7 +33,7 @@
       {"section": "beyond-the-row-placed-buttons-3d-handles-and-menus", "after": "A handle can also be a ring", "clips": ["handles/04_ring", "handles/05_turn"]},
       {"section": "beyond-the-row-placed-buttons-3d-handles-and-menus", "after": "Menus:", "clips": ["build_a_menu/07_open", "menus_in_use/01_haul", "menus_in_use/02_pin", "menus_in_use/03_stays_open", "menus_in_use/04_sub_menu"]},
       {"section": "beyond-the-row-placed-buttons-3d-handles-and-menus", "after": "Buttons that come and go", "clips": ["toggles/04_bend_on", "toggles/05_reach_off"]},
-      {"section": "tutorials", "after": "Writing tutorials", "clips": ["write_tutorial/01_edit", "write_tutorial/05_try"]}
+      {"section": "tutorials", "after": "To write tutorials, click the pencil", "clips": ["write_tutorial/01_edit", "write_tutorial/05_try"]}
     ],
     "writing": [
       {"section": "writing-one-in-the-kneady-tab", "after": "Set Help to Learn", "clips": ["write_tutorial/01_edit", "write_tutorial/02_new", "write_tutorial/03_write", "write_tutorial/04_done", "write_tutorial/05_try"]}

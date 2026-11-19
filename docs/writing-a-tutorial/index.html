@@ -28,94 +28,114 @@
 
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/support.html">Support</a> <span aria-hidden="true">/</span> <a href="/docs/">Docs</a> <span aria-hidden="true">/</span> <span aria-current="page">Writing a tutorial</span></nav>
   <main id="main">
-<header class="doc-head"><h1>Writing a tutorial</h1><p class="lede">For add-on makers, riggers and character sellers. Kneady tutorials are data: a folder with a tutorial.json, its clips and a practice scene.</p></header><div class="doc-layout"><nav class="toc" aria-label="Writing a tutorial: contents"><p class="kicker">On this page</p><ol><li><a href="#writing-one-in-the-kneady-tab">Writing one in the Kneady tab</a></li><li><a href="#a-tutorial-is-a-folder">A tutorial is a folder</a></li><li><a href="#where-tutorials-come-from">Where tutorials come from</a></li><li><a href="#attached-to-an-item-in-a-file">Attached to an item, in a file</a></li><li><a href="#clips-and-images">Clips and images</a></li><li><a href="#local-or-hosted">Local or hosted</a></li><li><a href="#on-a-phone">On a phone</a></li><li><a href="#tutorialjson">tutorial.json</a></li><li><a href="#the-practice-scene">The practice scene</a></li><li><a href="#trying-one">Trying one</a></li></ol></nav><article class="doc-article"><div class="prose">
-<p>A Kneady tutorial plays in the 3D view: a panel down the view's left side,
-where the toolbar is, with short vertical clips of the gesture - or still
-images - at the top, the step's text under them, and Back, Reset and Next at
-the bottom. Kneady's
-own sidebar is lit live where a step points at it, so a tutorial doesn't go
-stale when the panel changes. A step can watch for what it asks and tick
-itself off.</p>
-<p>With Help set to <strong>Learn</strong>, where Kneady starts, the top of the Kneady tab has <strong>Start a
-Tutorial</strong>, a menu of every tutorial, and beside it a pencil: <strong>Edit mode</strong>,
-where tutorials are written. They are in the <strong>Tutorials</strong> panel, which
-folds away by its header like any of Blender's panels - in one window and
-not another, so a window you record the Kneady tab in can have it folded
-while you write in the other.</p>
+<header class="doc-head"><h1>Writing a tutorial</h1><p class="lede">For add-on developers, riggers and character sellers. A Kneady tutorial is a folder with a tutorial.json file, its clips and a practice scene.</p></header><div class="doc-layout"><nav class="toc" aria-label="Writing a tutorial: contents"><p class="kicker">On this page</p><ol><li><a href="#writing-one-in-the-kneady-tab">Writing one in the Kneady tab</a></li><li><a href="#a-tutorial-is-a-folder">A tutorial is a folder</a></li><li><a href="#where-tutorials-come-from">Where tutorials come from</a></li><li><a href="#attached-to-an-item-in-a-file">Attached to an item, in a file</a></li><li><a href="#clips-and-images">Clips and images</a></li><li><a href="#local-or-hosted">Local or hosted</a></li><li><a href="#on-a-phone">On a phone</a></li><li><a href="#tutorialjson">tutorial.json</a></li><li><a href="#the-practice-scene">The practice scene</a></li><li><a href="#trying-one">Trying one</a></li></ol></nav><article class="doc-article"><div class="prose">
+<p>A Kneady tutorial plays in a panel along the left side of the 3D Viewport,
+where the toolbar usually is. The top of the panel shows short vertical
+clips of the gesture, or still images. The step's text is below them, and
+Back, Reset and Next are at the bottom. When a step refers to something in
+Kneady's own Sidebar tab, that part of the tab is highlighted live, so a
+tutorial doesn't go out of date when the panel changes. A step can also
+watch for what it asks the person to do and mark itself as done.</p>
+<p>When Help is set to <strong>Learn</strong> (the default), the top of the Kneady tab has
+<strong>Start a Tutorial</strong>, a menu of all tutorials. Next to it is a pencil icon
+that turns on <strong>Edit mode</strong>, where you write tutorials. The editor is in
+the <strong>Tutorials</strong> panel, which you can collapse by its header like any
+Blender panel. Each window remembers this separately, so if you record the
+Kneady tab in one window, you can keep the panel collapsed there while you
+write in another.</p>
 <h2 id="writing-one-in-the-kneady-tab">Writing one in the Kneady tab</h2>
 <ol>
-<li>Set Help to <strong>Learn</strong> and press the pencil beside Start a Tutorial.</li>
-<li><strong>+</strong> makes a tutorial; the dropdown picks one to change; the bin
-deletes the one picked (to the Recycle Bin on Windows). The folder icon
-chooses where tutorials are saved - your folder (below).</li>
-<li><strong>Tutorial:</strong> its title, the summary its tooltip shows, its order in the
-menu (tutorials are numbered in it, from 1 - or from 0 when the first
-has order 0, one that comes before the rest, as Kneady's own Learn,
-Inform and Quiet), its practice scene (the file icon makes the file that is open the
-practice scene: a copy saved into the tutorial's folder), where its
-media are hosted, and its <strong>Playlist</strong>, to watch it on a phone (see
-"On a phone").</li>
-<li><strong>Shared Media:</strong> clips and images for every step without its own.</li>
-<li><strong>Steps:</strong> the list, with + and - and the arrows. For the one selected:
+<li>Set Help to <strong>Learn</strong> and click the pencil next to Start a Tutorial.</li>
+<li>Click <strong>+</strong> to create a tutorial, or use the dropdown to choose one to
+edit. The trash icon deletes the chosen tutorial (to the Recycle Bin on
+Windows). The folder icon chooses where tutorials are saved (see "Your
+folder" below).</li>
+<li>Under <strong>Tutorial</strong>, fill in:
 <ul>
-<li><strong>Text:</strong> its paragraphs. The pencil beside one opens it in a wide box.</li>
-<li><strong>Media:</strong> the shared set, its own, or none. Each clip or image is
-<strong>Local</strong> (it ships in the tutorial's folder) or <strong>Hosted</strong> (downloaded
-when played - see below). The folder icon beside its file chooses the
-clip or image and copies it to where it belongs; the line under it
-says where it is and whether it will ship. <strong>Hold at End</strong> keeps it on
-its last frame once it has played. <strong>Trim</strong> is the frames that play
-(see "Trimming"). <strong>Watch Link</strong> is where to watch it online - a YouTube Short - for when
-it can't be shown here.</li>
-<li><strong>Highlight:</strong> fields to light in Kneady's panels - the Tutorials
-panel's editor too. Hover a field, press Ctrl+Shift+Alt+C (Copy Full
-Data Path), then the paste icon.</li>
-<li><strong>Done When:</strong> what ticks the step off. Done by the person, the step
-moves on to the next by itself a moment later; Next works too. The
-eyedropper takes a property's value as it is now.</li>
-<li><strong>Start:</strong> what the step sets up. <strong>Use Current</strong> takes the mode, the
-selection, the view or the sidebar's tab from the scene as it is.</li>
+<li>the title, and the summary shown in its tooltip</li>
+<li>its order in the menu. Tutorials are numbered in the menu starting
+from 1, or from 0 if the first one has order 0. Order 0 is for a
+tutorial that comes before all the others, like Kneady's own "Learn,
+Inform and Quiet".</li>
+<li>its practice scene. The file icon makes the open file the practice
+scene, saving a copy of it into the tutorial's folder.</li>
+<li>where its media are hosted</li>
+<li>its <strong>Playlist</strong>, for watching it on a phone (see "On a phone").</li>
 </ul>
 </li>
-<li>What is wrong is listed under Save as you type. <strong>Save</strong> writes the
-tutorial; <strong>Try</strong> saves it and plays it from the step selected, in the
-file that is open - its starts change this file's scene, which Ctrl+Z
-puts back. Tried while a tutorial plays in its practice scene (as in
-Write a Tutorial), the one tried takes its place and keeps its Return to
-My File. The panel shows your edits as you make them, but Start a
-Tutorial plays what is saved: started with edits not saved yet, it asks
+<li><strong>Shared Media</strong> holds clips and images for every step that doesn't
+have its own.</li>
+<li><strong>Steps</strong> is the list of steps, with + and -, and arrows to reorder
+them. For the selected step:
 <ul>
-<li><strong>Save and Play</strong>, or <strong>Play Saved Version</strong>.</li>
+<li><strong>Text:</strong> Its paragraphs. The pencil next to a paragraph opens it in
+a larger box.</li>
+<li><strong>Media:</strong> The shared set, the step's own, or none. Each clip or image
+is either <strong>Local</strong> (included in the tutorial's folder) or <strong>Hosted</strong>
+(downloaded when played, see below). The folder icon next to its file
+chooses the clip or image and copies it to the right place. The line
+below it says where the file is and whether it will be included.
+<strong>Hold at End</strong> keeps a clip on its last frame once it has played, or
+keeps an image on screen.
+<strong>Trim</strong> sets which frames play (see "Trimming"). <strong>Watch Link</strong> is
+where the clip can be watched online, such as a YouTube Short, for
+when it can't be shown in Blender.</li>
+<li><strong>Highlight:</strong> Fields to highlight in Kneady's panels, including the
+Tutorials panel's editor. To add one, hover over the field, press
+Ctrl+Shift+Alt+C (Copy Full Data Path), then click the paste icon.</li>
+<li><strong>Done When:</strong> What marks the step as done. When the person does it,
+the tutorial moves on to the next step a moment later. Next also
+works. The eyedropper fills in a property's current value.</li>
+<li><strong>Start:</strong> What the step sets up. <strong>Use Current</strong> takes the mode, the
+selection, the view or the Sidebar tab from the scene as it is now.</li>
 </ul>
 </li>
+<li>Problems are listed under Save as you type. <strong>Save</strong> writes the
+tutorial. <strong>Try</strong> saves it and plays it from the selected step, in the
+open file. A step's Start changes that file's scene, and Ctrl+Z puts it
+back. If you click Try while a tutorial is playing in its practice scene
+(as in the Write a Tutorial tutorial), the one you are trying replaces
+it and keeps its Return to My File button. The panel shows your edits as
+you make them, but Start a Tutorial plays the saved version. If you
+start a tutorial that has unsaved edits, Kneady asks whether to <strong>Save
+and Play</strong> or <strong>Play Saved Version</strong>.</li>
 </ol><div class="doc-clips"><p class="kicker">Examples</p><div class="clip-row"><figure class="clip"><video aria-label="Write a Tutorial, Step 1: Turn On Edit Mode" class="clip-video" controls="" data-poster="/docs/media/write_tutorial/01_edit.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/write_tutorial/01_edit.mp4" type="video/mp4"/></video><figcaption><strong>Turn On Edit Mode</strong><span>From tutorial 13, Write a Tutorial</span></figcaption></figure><figure class="clip"><video aria-label="Write a Tutorial, Step 2: Make One" class="clip-video" controls="" data-poster="/docs/media/write_tutorial/02_new.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/write_tutorial/02_new.mp4" type="video/mp4"/></video><figcaption><strong>Make One</strong><span>From tutorial 13, Write a Tutorial</span></figcaption></figure><figure class="clip"><video aria-label="Write a Tutorial, Step 3: Write Its Step" class="clip-video" controls="" data-poster="/docs/media/write_tutorial/03_write.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/write_tutorial/03_write.mp4" type="video/mp4"/></video><figcaption><strong>Write Its Step</strong><span>From tutorial 13, Write a Tutorial</span></figcaption></figure><figure class="clip"><video aria-label="Write a Tutorial, Step 4: Say When It's Done" class="clip-video" controls="" data-poster="/docs/media/write_tutorial/04_done.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/write_tutorial/04_done.mp4" type="video/mp4"/></video><figcaption><strong>Say When It's Done</strong><span>From tutorial 13, Write a Tutorial</span></figcaption></figure><figure class="clip"><video aria-label="Write a Tutorial, Step 5: Try It" class="clip-video" controls="" data-poster="/docs/media/write_tutorial/05_try.jpg" height="1280" loop="" muted="" playsinline="" preload="none" width="720"><source src="/docs/media/write_tutorial/05_try.mp4" type="video/mp4"/></video><figcaption><strong>Try It</strong><span>From tutorial 13, Write a Tutorial</span></figcaption></figure></div></div>
-<p><strong>A step that asks for something</strong> - drag a Kneady button, click one, hover
-a region, press a panel's button, change a field, select an object - says
-so under Done When: an <strong>Action</strong> (a Kneady button dragged or clicked -
-its How says Hauled, Clicked, or Hauled or Clicked - on which region and
-object, or any other operator by its name, as <code>object.mode_set</code>),
-<strong>Hovered</strong> (a region), a <strong>Property</strong> that becomes a value or changes, the
-<strong>Mode</strong>, the <strong>Active Object</strong> or what is <strong>Selected</strong>. Its Start sets the
-scene up so it can be done; Highlight lights the field it is about.</p>
-<p><strong>The panel shows it as you write.</strong> While Edit mode is on, the tutorial's
-panel over the view shows the tutorial being edited, unsaved changes and
-all, at the step selected in the list - its header says <strong>Editing</strong>. Type a
-paragraph, add a clip, change what a step lights, and the panel and Kneady's
-own panels show it a moment later. Selecting a step in the list shows it in
-the panel; <strong>Back</strong> and <strong>Next</strong> in the panel select it in the list. Going
-from step to step there sets nothing up, so editing never moves your scene;
-<strong>Reset</strong> sets the step up on purpose, to try its start. A local clip or
-image shows from this computer, "not recorded yet" until it's there; a
-hosted one plays from its copy on this computer, or downloads, so what you
-put online can be checked. The eye beside Save hides it, as does its x;
-Try plays the tutorial for real, and the preview comes back when that ends.</p>
-<p><strong>Your folder.</strong> Tutorials are saved in your tutorials folder: in a copy of
-Kneady's repository, its own <code>tutorials/</code>; installed, Kneady's folder in
-Blender's user files, which an update leaves alone. The folder icon chooses
-another. Changing one of Kneady's own tutorials saves a copy into your
-folder, practice scene and media with it, and the copy is the one listed.</p>
-<p>The rest of this guide is the file the editor writes, for reading it or
-writing one by hand.</p>
+<p><strong>Steps that ask for something.</strong> A step can ask the person to drag or
+click a Kneady button, hover a region, click a button in a panel, change a
+field, or select an object. Set this under Done When, as one of these:</p>
+<ul>
+<li><strong>Action:</strong> A Kneady button dragged or clicked, on a given region and
+object. Its How setting says Hauled, Clicked, or Hauled or Clicked. An
+action can also be any other operator, by its name, such as
+<code>object.mode_set</code>.</li>
+<li><strong>Hovered:</strong> A region.</li>
+<li><strong>Property:</strong> A property that reaches a value, or changes.</li>
+<li><strong>Mode</strong>, <strong>Active Object</strong>, or what is <strong>Selected</strong>.</li>
+</ul>
+<p>The step's Start sets up the scene so that the step can be done, and
+Highlight points to the field it is about.</p>
+<p><strong>Previewing as you write.</strong> While Edit mode is on, the tutorial panel
+over the view shows the tutorial you are editing, including unsaved
+changes, at the step selected in the list. Its header says <strong>Editing</strong>.
+When you type a paragraph, add a clip or change what a step highlights,
+the panel and Kneady's own panels update a moment later. Selecting a step
+in the list shows it in the panel, and <strong>Back</strong> and <strong>Next</strong> in the panel
+select it in the list. Moving between steps this way doesn't set anything
+up, so editing never changes your scene. Click <strong>Reset</strong> when you want to
+set a step up and test its Start. A local clip or image is shown from your
+computer, or "not recorded yet" if the file isn't there yet. A hosted one
+plays from the copy on your computer, or is downloaded, so you can check
+what you have put online. The eye icon next to Save hides the preview, as
+does the panel's x. Try plays the tutorial for real, and the preview comes
+back when it ends.</p>
+<p><strong>Your folder.</strong> Tutorials are saved in your tutorials folder. In a copy
+of Kneady's repository, that is its own <code>tutorials/</code> folder. In an
+installed Kneady, it is Kneady's folder in Blender's user files, which
+updates leave alone. The folder icon chooses a different one. If you
+change one of Kneady's own tutorials, a copy is saved in your folder,
+along with its practice scene and media, and the copy is the one listed.</p>
+<p>The rest of this page describes the files the editor writes, in case you
+want to read them or write a tutorial by hand.</p>
 <h2 id="a-tutorial-is-a-folder">A tutorial is a folder</h2>
 <div aria-label="Code" class="scroll-x" role="region" tabindex="0"><pre><code>tutorials/quick_start/
     tutorial.json      the steps
@@ -126,162 +146,189 @@ writing one by hand.</p>
 dev/media/quick_start/
     02_region.mp4      copies of its hosted ones, to upload (see below)
 </code></pre></div>
-<p>A tutorial is data only. Nothing in it runs as Python: what a step checks or
-sets is a property named by a path, which Blender looks up the way a driver
-does. A clip or image is named by its file's name alone, never a path, so a
-tutorial can only show what is in its own folder.</p>
+<p>A tutorial contains only data. Nothing in it runs as Python. Everything a
+step checks or sets is a property named by a path, which Blender looks up
+the same way it does for a driver. Clips and images are named by their
+file name only, never by a path, so a tutorial can only show files in its
+own folder.</p>
 <h2 id="where-tutorials-come-from">Where tutorials come from</h2>
-<p><strong>Start a Tutorial</strong> lists them under where each comes from:</p>
+<p><strong>Start a Tutorial</strong> groups tutorials by where they come from:</p>
 <ul>
-<li><strong>Kneady</strong>: Kneady's own <code>tutorials/</code> folder.</li>
-<li><strong>An add-on</strong>: any enabled add-on with a <code>kneady_tutorials/</code> folder in
-its own folder, listed under the add-on's name. The add-on calls nothing
-of Kneady's, so any add-on can ship tutorials this way.</li>
-<li><strong>In This File</strong>: tutorials attached to an item in the open file (below).</li>
-<li><strong>Yours</strong>: the folder you write tutorials in.</li>
+<li><strong>Kneady:</strong> Kneady's own <code>tutorials/</code> folder.</li>
+<li><strong>An add-on:</strong> Any enabled add-on with a <code>kneady_tutorials/</code> folder in
+its own folder. These are listed under the add-on's name. The add-on
+doesn't need to call anything in Kneady, so any add-on can include
+tutorials this way.</li>
+<li><strong>In This File:</strong> Tutorials attached to an item in the open file (see
+below).</li>
+<li><strong>Yours:</strong> The folder you save tutorials in.</li>
 </ul>
-<p>Folders whose names start with <code>_</code> or <code>.</code> are never tutorials: a
-tutorials folder's <code>_scenes/</code> holds practice scenes several tutorials
-share. Two tutorials with the same folder name: the later one in this list
-is shown, so a copy of Kneady's own that you've changed takes its place.</p>
+<p>Folders whose names start with <code>_</code> or <code>.</code> are never treated as tutorials.
+For example, a tutorials folder's <code>_scenes/</code> folder holds practice scenes
+that several tutorials share. If two tutorials have the same folder name,
+the one from the later source in this list is shown, so a copy of one of
+Kneady's tutorials that you have changed replaces the original.</p>
 <h2 id="attached-to-an-item-in-a-file">Attached to an item, in a file</h2>
-<p>A rigger can give a rig its own tutorials, which travel in its file:</p>
+<p>A rigger can give a rig its own tutorials, which are stored in its file:</p>
 <ol>
-<li>Open the rig's file and write the tutorial as any other.</li>
-<li>Select the rig, and in the editor press <strong>Attach to Rig</strong> (Attach to
-Item, named for the active object).</li>
+<li>Open the rig's file and write the tutorial as usual.</li>
+<li>Select the rig, and in the editor click <strong>Attach to &lt;name&gt;</strong>. The
+button is named after the active object, for example Attach to ArmRig.</li>
 <li>Save the file.</li>
 </ol>
-<p>The tutorial, its clips and its images are stored on the object. It goes
-wherever the object goes: opened in its own file, or appended or linked into
-another, as an animator links a rig into a shot. Five copies of the rig in a
-shot list it once. It runs in the file it is in, never a practice scene, so
-its starts should change as little as possible.</p>
+<p>The tutorial, its clips and its images are stored on the object, and go
+wherever the object goes. That includes opening the rig's own file, and
+appending or linking it into another file, as an animator does when
+linking a rig into a shot. Five copies of the rig in a shot list the
+tutorial only once. An attached tutorial runs in the file it is in, never
+in a practice scene, so its Start settings should change as little as
+possible.</p>
 <ul>
-<li><strong>Where it shows</strong>: under In This File in Start a Tutorial, and at
-Help's Inform level too, as <strong>Tutorials in This File</strong> at the top of the
-Kneady tab. Quiet shows none.</li>
-<li><strong>Editing</strong>: pick it in the editor and edit as usual. Save writes it back
-into its object: save the file to keep it. Ctrl+Z undoes it. A linked
-rig's tutorials are changed in the rig's own file.</li>
-<li><strong>Save to Folder</strong> copies it out to your tutorials folder as a tutorial of
-its own. <strong>Delete</strong> takes it off the object.</li>
-<li><strong>Size</strong>: every clip adds to the file. To keep a file small, host the
-clips online (see Local or hosted); a hosted clip stays out of the file.</li>
-<li><strong>Safe</strong>: it is data, as every tutorial is. Opening someone else's file
-that carries tutorials runs nothing.</li>
+<li><strong>Where it shows:</strong> Under In This File in Start a Tutorial. It is also
+shown at Help's Inform level, as <strong>Tutorials in This File</strong> at the top of
+the Kneady tab. Quiet shows none.</li>
+<li><strong>Editing:</strong> Choose it in the editor and edit it as usual. Save writes it
+back to its object, and you then save the file to keep it. Ctrl+Z undoes
+the change. The tutorials of a linked rig are edited in the rig's own
+file.</li>
+<li><strong>Save to Folder</strong> copies it to your tutorials folder as a separate
+tutorial. <strong>Delete</strong> removes it from the object.</li>
+<li><strong>Size:</strong> Every clip makes the file bigger. To keep a file small, host
+the clips online (see "Local or hosted"). A hosted clip isn't stored in
+the file.</li>
+<li><strong>Safety:</strong> An attached tutorial is data, like every tutorial. Opening
+someone else's file that contains tutorials doesn't run anything.</li>
 </ul>
 <h2 id="clips-and-images">Clips and images</h2>
-<p>Kneady's own tutorials have their clips made by script, not recorded by
-hand: <code>dev/clips/</code> in Kneady's repository plays each step in a Recording
-Window with simulated input, draws the cursor on and encodes the MP4. When
-the interface changes, the clips are made again to match. Its README says
-how.</p>
+<p>The clips in Kneady's own tutorials are made by scripts rather than
+recorded by hand. In Kneady's repository, <code>dev/clips/</code> plays each step in
+a Recording Window with simulated input, draws the cursor, and encodes the
+MP4. When the interface changes, the clips are made again to match. The
+README in that folder explains how.</p>
 <ul>
-<li><strong>Vertical</strong>, 9:16 (4:5 works too; the panel fits whatever shape it gets).</li>
-<li><strong>720 x 1280</strong> is ideal; 540 x 960 is the least that stays sharp. The
-panel shows a clip 234 x 416 pixels times Blender's interface scale (the
-Resolution Scale preference times the screen's own, 2 on a Retina or 4K
-screen): 293 wide at 1.25, 468 at 2, so 720 is sharp up to 3. Each frame
-is decoded in Blender as it plays, so a bigger clip costs more for no
-gain. 1080 x 1920 only if the same clips also go to Shorts or Reels.</li>
-<li><strong>Shown small, so record close.</strong> A 720-wide clip of the screen shows at
-about 40% of its size at 1.25, interface text and all. Zoom
-the view in until the gesture fills the frame; for a clip of a panel, set
-Resolution Scale to 2 while recording, then back.</li>
-<li><strong>Clips: MP4 (H.264)</strong>, a few seconds long. There is no sound. (.mov,
-.webm, .mkv and .avi play too.)</li>
-<li><strong>Any frame rate, held constant.</strong> Each clip plays at its own rate - 15,
-24, 30 - mixed freely in one tutorial. The rate must not vary within a
-clip: OBS records a constant one; some quick screen recorders do not. 15
-is enough for interface work, and halves what Blender decodes as it
-plays; a fast drag looks a little stepped.</li>
-<li><strong>Smaller files come from the bitrate, not the frame rate.</strong> Recorded at
-a set bitrate (OBS's CBR), a 15 fps clip is the size of a 30 fps one.
-Record at a set quality instead - OBS's Recording Quality "High Quality,
-Medium File Size", or Rate Control CRF / CQP - and a still screen costs
-almost nothing.</li>
-<li><strong>Images: PNG or JPEG</strong>, for a moment that needs no motion - where a
-setting is, what a finished pose looks like.</li>
-<li>One gesture per clip. A step can have several: the gesture in the
-viewport, then where to find something in Blender's own interface.</li>
-<li>The same clips can go to YouTube Shorts, Reels or TikTok as they are.</li>
+<li><strong>Vertical:</strong> Use 9:16. 4:5 also works, since the panel fits whatever
+shape it gets.</li>
+<li><strong>720 x 1280</strong> is ideal, and 540 x 960 is the smallest size that stays
+sharp. The panel shows a clip at 234 x 416 pixels times Blender's
+interface scale, which is the Resolution Scale preference times the
+display's own scale (2 on a Retina or 4K display). That is 293 pixels
+wide at 1.25 and 468 at 2, so a 720-wide clip stays sharp up to a scale
+of 3. Each frame is decoded in Blender as it plays, so a larger clip
+costs more without looking better. Only use 1080 x 1920 if the same
+clips also go to Shorts or Reels.</li>
+<li><strong>Record close up.</strong> Clips are shown small. At an interface scale of
+1.25, a 720-wide recording of the screen is shown at about 40% of its
+size, interface text included. Zoom the view in until the gesture fills
+the frame. For a clip of a panel, set Resolution Scale to 2 while you
+record, then set it back.</li>
+<li><strong>Clips:</strong> MP4 (H.264), a few seconds long, with no sound. MOV, WebM,
+MKV and AVI files also play.</li>
+<li><strong>Frame rate:</strong> Any frame rate works, as long as it is constant. Each
+clip plays at its own rate (15, 24 or 30, for example), and one tutorial
+can mix them. The rate must not change within a clip. OBS records at a
+constant rate, but some quick screen recorders don't. 15 fps is enough
+for interface work and halves what Blender has to decode, although a
+fast drag can look a little choppy.</li>
+<li><strong>File size:</strong> The bitrate decides the file size, not the frame rate. Recorded at a fixed bitrate (CBR in OBS), a 15 fps clip is as
+large as a 30 fps one. Record at a fixed quality instead, such as OBS's
+Recording Quality "High Quality, Medium File Size", or Rate Control CRF
+or CQP. Then a still screen takes up almost no space.</li>
+<li><strong>Images:</strong> PNG or JPEG, for a moment that doesn't need motion, such as
+where a setting is or what a finished pose looks like.</li>
+<li>Show one gesture per clip. A step can have several clips, for example
+the gesture in the viewport and then where to find something in
+Blender's interface.</li>
+<li>The same clips can be posted to YouTube Shorts, Reels or TikTok without
+changes.</li>
 </ul>
-<p><strong>Recording a clip.</strong> Any screen recorder will do, at the size above. With
-OBS: make Blender's window - or a window of its own, View &gt; Area &gt;
-Duplicate Area into New Window - its inside 720 x 1280, add a <strong>Window
-Capture</strong> source for it with <strong>Client Area</strong> on (the inside only) and
-<strong>Capture Cursor</strong> on, and set Settings &gt; Video, Base and Output
-Resolution, to <code>720x1280</code>, so nothing is scaled. Record as MPEG-4 or Hybrid
-MP4 (Settings &gt; Output &gt; Recording Format), then choose the file with the
-folder icon beside the clip's File.</p>
-<p><strong>Trimming.</strong> A clip's <strong>Trim</strong> is the frames that play: Trim Start and End
-in its settings, counted from 1 - 0 is the clip's own start or end. Under
-them, what the trim keeps ("Keeps 2.0 of 10.0 s"). The panel plays the kept
-frames round, or holds the last. A trim is only marks: the file keeps every
-frame. For a file of just the kept frames - smaller, for posting - cut it in
-any video editor.</p>
-<p class="pro-only"><span class="badge-pro">Pro</span> Kneady Pro adds tools for this: a window sized for recording, recording a
-clip with OBS from the panel straight into its place, a trim bar under the
-clip to drag, Apply Trim, and Record What You Do, which turns what you do
-into a step's Done When, Start and Highlight. What they make is ordinary
-tutorial data, played here as it is.</p>
-<p>A missing file shows "Clip not recorded yet" or "Image not added yet" and its
-name in its place, so a tutorial can be written and tried before its media
-exist.</p>
+<p><strong>Recording a clip.</strong> Any screen recorder will do, at the size given
+above. With OBS:</p>
+<ol>
+<li>Make the inside of Blender's window 720 x 1280. You can use a separate
+window for this with View &gt; Area &gt; Duplicate Area into New Window.</li>
+<li>Add a <strong>Window Capture</strong> source for it, with <strong>Client Area</strong> on (so
+only the inside is captured) and <strong>Capture Cursor</strong> on.</li>
+<li>In Settings &gt; Video, set both Base and Output Resolution to <code>720x1280</code>,
+so nothing is scaled.</li>
+<li>Record as MPEG-4 or Hybrid MP4 (Settings &gt; Output &gt; Recording Format).</li>
+<li>Choose the recorded file with the folder icon next to the clip's File.</li>
+</ol>
+<p><strong>Trimming.</strong> A clip's <strong>Trim</strong> sets which frames play, with Trim Start
+and Trim End in its settings. They count from 1, and 0 means the clip's
+own start or end. Below them, the editor shows how much the trim keeps,
+for example "Keeps 2.0 of 10.0 s". The panel loops the kept frames, or
+holds on the last one. A trim only marks the frames to play, and the file
+itself keeps every frame. If you want a file with only the kept frames,
+for example to post it somewhere, cut it in a video editor.</p>
+<p class="pro-only"><span class="badge-pro">Pro</span> Kneady Pro adds tools for recording: a window sized for capture, OBS
+recording from the panel straight into the clip's place, a trim bar under
+the clip that you can drag, Apply Trim, and Record What You Do,
+which turns what you do into a step's Done When, Start and Highlight. What
+these tools make is ordinary tutorial data, and the free Kneady plays it
+as it is.</p>
+<p>If a file is missing, the panel shows "Clip not recorded yet" or "Image
+not added yet" and the file name in its place. This way you can write and
+try a tutorial before its media exist.</p>
 <h2 id="local-or-hosted">Local or hosted</h2>
-<p>Each clip or image is one or the other.</p>
+<p>Each clip or image is either local or hosted.</p>
 <ul>
-<li><strong>Local</strong> (the default): its file is in the tutorial's own folder and
-ships with it. It works offline and without Blender's Allow Online
-Access - so a first tutorial should be all local. Quick Start is.</li>
-<li><strong>Hosted</strong> (<code>"hosted": true</code>): downloaded from the tutorial's <code>media_url</code>
-followed by the file's name, or from the item's own <code>url</code>, in the
-background when the tutorial starts, and kept in Kneady's folder in
-Blender's user files, so it comes once. Hosted keeps a tutorial small,
-for long or many clips.</li>
+<li><strong>Local</strong> (the default): The file is in the tutorial's own folder and is
+included with it. It works offline and without Blender's Allow Online
+Access, so a first tutorial should use only local files. Quick Start
+does.</li>
+<li><strong>Hosted</strong> (<code>"hosted": true</code>): The file is downloaded in the background
+when the tutorial starts, from the tutorial's <code>media_url</code> followed by the
+file name, or from the item's own <code>url</code>. It is kept in Kneady's folder
+in Blender's user files, so it is only downloaded once. Hosting keeps a
+tutorial small, which helps with long clips or many clips.</li>
 </ul>
-<p>Downloading needs <strong>Allow Online Access</strong> on (Preferences &gt; System), as
-Blender asks of every extension. It is off in a new Blender, so the panel
-says so in the clip's place, and a click there opens Preferences. Only
-<code>https://</code> addresses are used, and certificates are checked against both
-the computer's own and Blender's, so an office network that checks secure
-traffic with its own certificate works too.</p>
-<p>A hosted item's copy on your computer - to play while you write, and to
-upload - is kept apart, where it never ships: in Kneady's repository,
-<code>dev/media/&lt;tutorial&gt;/</code>; in any other tutorials folder, its
-<code>.hosted/&lt;tutorial&gt;/</code>. The editor's folder icon puts it there.</p>
+<p>Downloading needs <strong>Allow Online Access</strong> to be on (Preferences &gt;
+System), as Blender requires for every extension. It is off in a new
+installation of Blender, so the panel says so where the clip would be,
+and clicking there opens the Preferences. Only <code>https://</code> addresses are
+used. Certificates are checked against both the computer's own and
+Blender's, so it also works on office networks that inspect secure
+traffic with their own certificate.</p>
+<p>The copy of a hosted file on your computer, which you play while writing
+and then upload, is kept in a separate place where it is never included
+with the tutorial. In Kneady's repository, that is
+<code>dev/media/&lt;tutorial&gt;/</code>. In any other tutorials folder, it is
+<code>.hosted/&lt;tutorial&gt;/</code>. The editor's folder icon puts the file there.</p>
 <p><strong>Watch Link.</strong> Any clip can have a <code>watch</code> address, such as its YouTube
-Short. Whenever it can't be shown here - not recorded, Online Access off, a
-download that failed, a Blender that can't play video - a <strong>Watch on
-YouTube</strong> button in its place opens it in the person's browser.</p>
-<p>To publish hosted ones:</p>
+Short. Whenever the clip can't be shown in Blender (it isn't recorded,
+Online Access is off, the download failed, or this Blender can't play
+video), a <strong>Watch on YouTube</strong> button appears in its place and opens it in
+the person's browser. For a link to another site, the button says <strong>Watch
+Online</strong>.</p>
+<p>To publish hosted files:</p>
 <ol>
 <li>Record into <code>dev/media/&lt;tutorial&gt;/</code> and try the tutorial.</li>
 <li>Run <code>python dev/publish_media.py &lt;tutorial&gt;</code>. It writes each file's
-<code>sha256</code> fingerprint into tutorial.json - Kneady refuses a download that
-isn't that file - and lists each file with the address it has to be
-found at.</li>
-<li>Upload them there - a GitHub release of a public repository works:
-create the release, then attach the files to it.</li>
-<li>To replace a clip, give the new recording <strong>a new file name</strong>
-(<code>01_turn_on_2.mp4</code>), point the step at it, run the script and upload it.
-It reaches people with the next Kneady release, which carries the new
-tutorial.json. <strong>Leave the old file online</strong>: a Kneady already installed
-still asks for it, and refuses a different file under its old name.</li>
+<code>sha256</code> fingerprint into tutorial.json, so Kneady refuses any download
+that isn't that exact file. It also lists each file with the address
+where it has to be available.</li>
+<li>Upload the files to those addresses. A GitHub release of a public
+repository works: create the release, then attach the files to it.</li>
+<li>To replace a clip, give the new recording <strong>a new file name</strong> (for
+example <code>01_turn_on_2.mp4</code>), point the step at it, run the script and
+upload it. People get the new clip with the next Kneady release, which
+includes the new tutorial.json. <strong>Leave the old file online.</strong> Copies of
+Kneady that are already installed still ask for it, and they refuse a
+different file under the old name.</li>
 </ol>
 <h2 id="on-a-phone">On a phone</h2>
-<p>A tutorial's <strong>Playlist</strong> is where the whole tutorial can be watched on a
-phone - a YouTube playlist of its clips, in order. The panel's title row
-then has a phone button, which shows the link as a QR code in place of the
-clip and the text. A phone's camera opens it, and the person swipes to the
-clip they want; a click on the code goes back. The clip waits while the
-code shows.</p>
+<p>A tutorial's <strong>Playlist</strong> is a link where the whole tutorial can be
+watched on a phone: a YouTube playlist of its clips, in order. When a
+tutorial has one, the panel's title row has a phone button, which shows
+the link as a QR code in place of the clip and the text. The person opens
+it with their phone's camera and swipes to the clip they want. Clicking
+the code goes back. The clip pauses while the code is shown.</p>
 <ul>
-<li>Make the playlist <strong>Public</strong> or <strong>Unlisted</strong>. A Private one opens for no
-one but you.</li>
-<li>One link for the whole tutorial, not one per clip: a person scans once.</li>
-<li>Only an <code>https://</code> address is taken.</li>
+<li>Make the playlist <strong>Public</strong> or <strong>Unlisted</strong>. A private playlist only
+opens for you.</li>
+<li>Use one link for the whole tutorial rather than one per clip, so the
+person only has to scan once.</li>
+<li>Only an <code>https://</code> address is accepted.</li>
 </ul>
 <h2 id="tutorialjson">tutorial.json</h2>
 <div aria-label="Code" class="scroll-x" role="region" tabindex="0"><pre><code class="language-json">{
@@ -315,101 +362,104 @@ one but you.</li>
   ]
 }
 </code></pre></div>
-<p>At the top, <code>playlist</code> is where the whole tutorial is watched on a phone,
-shown as a QR code (see "On a phone").</p>
+<p>At the top level, <code>playlist</code> is the link for watching the whole tutorial
+on a phone, shown as a QR code (see "On a phone").</p>
 <p>Everything in a step is optional except <code>text</code>.</p>
 <ul>
 <li>
-<p><strong>text</strong>: the step's paragraphs. Keep them short; the panel is narrow.
-Write a path through Blender's interface as a breadcrumb:
+<p><strong>text</strong>: The step's paragraphs. Keep them short, since the panel is
+narrow. Write a path through Blender's interface as a breadcrumb:
 Properties &gt; Modifiers &gt; Kneady &gt; Speed.</p>
 </li>
 <li>
-<p><strong>media</strong>: the step's clips and images, each with its <code>file</code>, a <code>label</code>
+<p><strong>media</strong>: The step's clips and images. Each has a <code>file</code>, a <code>label</code>
 saying where to look ("In the viewport", "Properties &gt; Modifiers"), and
-the <code>paragraph</code> it goes with, counted from 0. While it shows, its
-paragraph is lit and scrolled into view. A step's media play one after
-another and start over; an image stays up for its <code>seconds</code> (4 if it
-doesn't say) before the next. A clip alone in its step plays again and
-again.</p>
+the <code>paragraph</code> it goes with, counted from 0. While an item is showing,
+its paragraph is highlighted and scrolled into view. A step's media play
+one after another and then start over. An image stays up for its
+<code>seconds</code> (4 if not given) before the next item. A clip that is the only
+item in its step loops.</p>
 <ul>
-<li><code>hold</code>: true to stay on its last frame once it has played - an image,
-on it - rather than playing again or going on to the next. A clip that
-ends on the result is one to hold. The arrows and dots still go on.</li>
-<li><code>trim</code>: <code>[first, last]</code>, the frames that play, counted from 1 - <code>last</code>
-0 for the clip's end. The clip's Trim in the editor (see "Trimming").</li>
-<li><strong>The person's Pause and Loop</strong>, in the row under the clip, are for
-the item showing only: Pause pauses it (Play on one held at its end
-starts it over), and Loop plays it again and again, whatever it says.
-The next item starts as it says.</li>
-<li><strong>A step's own, or the shared set.</strong> A step with <code>media</code> shows its own;
-<code>"media": []</code> shows none; a step without the key shows the tutorial's
-shared set, <code>media</code> at the top of the file. Going from one step that
-shares the set to another keeps its place, so one clip can play on
-under several pages of text. A shared item lights its <code>paragraph</code> on
-whichever step has that paragraph.</li>
-<li><code>hosted</code>: true for one downloaded rather than shipped. <code>url</code>: where
-it is hosted, when it isn't at the tutorial's <code>media_url</code> (an item with
-a <code>url</code> is hosted). <code>sha256</code>: its fingerprint, written by
-<code>publish_media.py</code>.</li>
-<li><code>watch</code>: where to watch it online, for a Watch button when it can't be
-shown here.</li>
-<li><code>recorded</code>: the Blender and Kneady versions it was made in (the
-editor's refresh icon beside them stamps this Blender's and Kneady's).
-The editor counts the clips and images made in other versions, so the
-ones that may show an old interface are found after an update.</li>
-<li><code>show_me</code>: a Show Me button under the clip, opening the place it shows:
-<code>{"sidebar": "Kneady"}</code> for a sidebar tab, or
+<li><code>hold</code>: Set to true to stay on the last frame once the clip has played
+(or to stay on an image), instead of playing again or moving on to the
+next item. Use it for a clip that ends on the finished result. The arrows and
+dots still move to the next item.</li>
+<li><code>trim</code>: <code>[first, last]</code>, the frames that play, counted from 1. Use 0
+for <code>last</code> to play to the end of the clip. This is the clip's Trim in
+the editor (see "Trimming").</li>
+<li><strong>Pause and Loop</strong>, in the row under the clip, only affect the item
+that is showing. Pause pauses it (pressing Play on an item held at its
+end starts it over), and Loop plays it over and over, whatever its own
+settings say. The next item starts as its settings say.</li>
+<li><strong>A step's own media, or the shared set.</strong> A step with <code>media</code> shows
+its own items, and <code>"media": []</code> shows none. A step without the key
+shows the tutorial's shared set, which is the <code>media</code> at the top of the
+file. Moving from one step that uses the shared set to another keeps
+the current position, so one clip can keep playing over several pages
+of text. A shared item highlights its <code>paragraph</code> on any step that has
+that paragraph.</li>
+<li><code>hosted</code>: True for an item that is downloaded rather than included.
+<code>url</code>: Where it is hosted, if not at the tutorial's <code>media_url</code>. An
+item with a <code>url</code> is always hosted. <code>sha256</code>: Its fingerprint, written
+by <code>publish_media.py</code>.</li>
+<li><code>watch</code>: Where to watch it online, for a Watch button when it can't
+be shown in Blender.</li>
+<li><code>recorded</code>: The Blender and Kneady versions it was made with. The
+refresh icon next to them in the editor fills in the current versions.
+The editor counts the clips and images made with other versions, so
+after an update you can find the ones that may show an old interface.</li>
+<li><code>show_me</code>: Adds a Show Me button under the clip, which opens the place
+the clip shows. Use <code>{"sidebar": "Kneady"}</code> for a Sidebar tab, or
 <code>{"properties": "MODIFIER", "object": "Arm", "modifier": "GeometryNodes"}</code>
-for a Properties editor's tab, with an object made active and a modifier
-opened.</li>
+for a tab of the Properties Editor, with the object made active and the
+modifier expanded.</li>
 </ul>
 </li>
 <li>
-<p><strong>highlight</strong>: properties in Kneady's own panels to light up.</p>
+<p><strong>highlight</strong>: Properties in Kneady's own panels to highlight.</p>
 </li>
 <li>
-<p><strong>done_when</strong>: conditions that all have to hold for the step to tick
-itself off. Each is a path and one test, or a state on its own:</p>
+<p><strong>done_when</strong>: Conditions that must all be true for the step to be
+marked as done. Each is a path with one test, or a state on its own:</p>
 <div aria-label="Table" class="scroll-x" role="region" tabindex="0"><table>
 <thead>
 <tr>
 <th>Condition</th>
-<th>Holds when</th>
+<th>True when</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>{"path": P, "is": V}</code></td>
-<td>the value is V (numbers to a hair; lists for vectors)</td>
+<td>the value is V (numbers are compared with a tiny tolerance; use lists for vectors)</td>
 </tr>
 <tr>
 <td><code>{"path": P, "is_not": V}</code></td>
-<td>it isn't</td>
+<td>the value is not V</td>
 </tr>
 <tr>
 <td><code>{"path": P, "at_least": N}</code>, <code>"at_most"</code></td>
-<td>a number past N</td>
+<td>a number is at least (or at most) N</td>
 </tr>
 <tr>
 <td><code>{"path": P, "changed": true}</code></td>
-<td>it differs from when the step began</td>
+<td>the value is different from when the step began</td>
 </tr>
 <tr>
 <td><code>{"path": P, "count_at_least": N}</code></td>
-<td>a collection has N or more</td>
+<td>a collection has N or more items</td>
 </tr>
 <tr>
 <td><code>{"operator": "kneady.drag", "with": {"target": "Arm", "region": 1, "button": 0}, "moved": true}</code></td>
-<td>that Kneady button was dragged since the step began (<code>"moved": false</code>: clicked; leave it out for either). Only what <code>with</code> names is checked</td>
+<td>that Kneady button was dragged since the step began (<code>"moved": false</code> for clicked, or leave it out for either). Only what <code>with</code> names is checked.</td>
 </tr>
 <tr>
 <td><code>{"operator": "object.mode_set", "with": {"mode": "POSE"}}</code></td>
-<td>any other operator run since the step began - from a panel's button or a key - that Blender keeps in its history</td>
+<td>any other operator was run since the step began, from a button in a panel or a key, as long as Blender keeps it in its history</td>
 </tr>
 <tr>
 <td><code>{"hovered": "Forearm", "object": "Arm"}</code></td>
-<td>that region was hovered since the step began (<code>object</code> optional)</td>
+<td>that region was hovered since the step began (<code>object</code> is optional)</td>
 </tr>
 <tr>
 <td><code>{"mode": "POSE"}</code></td>
@@ -425,80 +475,84 @@ itself off. Each is a path and one test, or a state on its own:</p>
 </tr>
 </tbody>
 </table></div>
-<p>A step with no conditions has nothing to tick; Next is always there.</p>
+<p>A step without conditions is never marked as done on its own, but Next
+is always available.</p>
 </li>
 <li>
-<p><strong>start</strong>: what the step sets up, every time it's entered and when Reset
-is pressed, as one undo step. <code>mode</code>, <code>select</code> (object names, the rest
-deselected), <code>active</code>, <code>set</code> (paths and values), <code>view</code> (the 3D view's
-<code>location</code>, <code>rotation</code> as w, x, y, z, <code>distance</code> and <code>perspective</code>) and
-<code>sidebar</code> (a tab to open).</p>
+<p><strong>start</strong>: What the step sets up, each time the step is entered and when
+Reset is clicked, as one undo step. It can contain <code>mode</code>, <code>select</code>
+(object names; all other objects are deselected), <code>active</code>, <code>set</code> (paths
+and values), <code>view</code> (the 3D Viewport's <code>location</code>, <code>rotation</code> as w, x,
+y, z, <code>distance</code> and <code>perspective</code>) and <code>sidebar</code> (a tab to open).</p>
 </li>
 </ul>
-<p><strong>Paths</strong> start at <code>scene</code>, <code>object</code> (the active object),
-<code>objects["Name"]</code>, <code>window_manager</code> or <code>space</code> (the tutorial's 3D view), and
-go on the way Blender's data paths do:
-<code>objects["ArmRig"].pose.bones["Lower"].rotation_quaternion</code>. The editor's
-paste icon turns one copied with Copy Full Data Path into this form.</p>
+<p><strong>Paths</strong> start at <code>scene</code>, <code>object</code> (the active object), <code>objects["Name"]</code>,
+<code>window_manager</code> or <code>space</code> (the tutorial's 3D Viewport), and continue the
+way Blender's data paths do, for example
+<code>objects["ArmRig"].pose.bones["Lower"].rotation_quaternion</code>. The paste
+icon in the editor converts a path copied with Copy Full Data Path into
+this form.</p>
 <h2 id="the-practice-scene">The practice scene</h2>
 <p>A tutorial with <code>practice</code> opens a copy of that file from the temporary
-folder. Blender asks the person to save their own file first, through its
+folder. Blender first asks the person to save their own file, with its
 usual prompt, and <strong>Return to My File</strong> opens their file again at the end.
 Nothing they do in the practice scene is kept.</p>
-<p>Opening a file clears Blender's undo history: their work is saved, but not
-their undo steps. A tutorial without a practice scene runs in whatever file
-is open, so its starts should change as little as possible.</p>
+<p>Opening a file clears Blender's undo history, so the person's work is
+saved but their undo steps are not. A tutorial without a practice scene
+runs in whatever file is open, so its Start settings should change as
+little as possible.</p>
 <ul>
 <li>
-<p>In the editor, <strong>the file icon (Use This File)</strong> beside Practice Scene
-makes the file that is open the practice scene. For Kneady's own
-tutorials, make it with a script instead, so it can be made again. The
-shared scenes in <code>tutorials/_scenes/</code> come from
+<p>In the editor, <strong>the file icon (Use This File)</strong> next to Practice Scene
+makes the open file the practice scene. For Kneady's own tutorials, make
+the scene with a script instead, so it can be made again later. The
+shared scenes in <code>tutorials/_scenes/</code> are made by scripts in
 <code>dev/scenes/</code>:</p>
 <ul>
 <li><code>cube</code>: Blender's default scene.</li>
-<li><code>shape_cube</code>: a cube of many faces with a Sphere shape key and a Twist
+<li><code>shape_cube</code>: A cube with many faces, a Sphere shape key and a Twist
 modifier input.</li>
-<li><code>arm</code>: a Rigify left arm and hand.</li>
-<li><code>mannequin</code>: a whole Rigify figure without a face.</li>
+<li><code>arm</code>: A Rigify left arm and hand.</li>
+<li><code>mannequin</code>: A full Rigify figure without a face.</li>
 </ul>
-<p>The rigs are generated by Rigify, which ships with Blender, and the
-bodies are built around their bones; nothing comes from elsewhere.</p>
+<p>The rigs are generated by Rigify, which comes with Blender, and the
+bodies are built around their bones. Nothing comes from anywhere else.</p>
 </li>
 <li>
-<p>Save it with <strong>the oldest Blender Kneady supports</strong> (4.2), so every
-supported Blender opens it. The file icon (Use This File) saves with the
-Blender that is running, and says so.</p>
+<p>Save it with <strong>the oldest Blender version Kneady supports</strong> (4.2), so
+every supported version can open it. The file icon (Use This File) saves
+with the version of Blender that is running, and says so.</p>
 </li>
 <li>
-<p>Its object, bone and region names are fixed: the steps' checks and starts
-name them.</p>
+<p>Don't rename its objects, bones or regions, because the steps' checks
+and Start settings refer to them by name.</p>
 </li>
 <li>
-<p>Several tutorials can share one: put it in the tutorials folder's
-<code>_scenes/</code> and give each <code>"practice": "../_scenes/arm.blend"</code>. A practice
-path can reach a sibling folder of its tutorials folder, never past it.
-Copied to your folder to be edited, a tutorial takes its own copy of the
-scene along.</p>
+<p>Several tutorials can share one scene. Put it in the tutorials folder's
+<code>_scenes/</code> folder and set each tutorial's practice to
+<code>"practice": "../_scenes/arm.blend"</code>. A practice path can reach a folder
+next to its tutorial's folder, but never above the tutorials folder.
+When a tutorial is copied to your folder for editing, it takes its own
+copy of the scene along.</p>
 </li>
 <li>
-<p>Keep it small; it ships with Kneady.</p>
+<p>Keep it small, since it is included with Kneady.</p>
 </li>
 <li>
-<p>Use your own models. Anything from someone else needs its license checked
-and its attribution included.</p>
+<p>Use your own models. Anything made by someone else needs its license
+checked and its attribution included.</p>
 </li>
 </ul>
 <h2 id="trying-one">Trying one</h2>
 <ul>
-<li>In the editor, <strong>Try</strong>: it saves the tutorial and plays it from the step
-selected. Or set Help to Learn and pick it from <strong>Start a Tutorial</strong>,
-which opens its practice scene as a person would.</li>
-<li><code>tests/test_tutorials.py</code> checks every shipped tutorial reads without a
-problem, and that every path it checks, sets or lights is there in its
-practice scene.</li>
+<li>In the editor, click <strong>Try</strong> to save the tutorial and play it from the
+selected step. Or set Help to Learn and choose it from <strong>Start a
+Tutorial</strong>, which opens its practice scene the way a user would see it.</li>
+<li><code>tests/test_tutorials.py</code> checks that every included tutorial can be
+read without problems, and that every path it checks, sets or
+highlights exists in its practice scene.</li>
 <li><code>tests/probe_tutorial.py</code> plays the panel in a real window and clicks
-through it (see TESTING.md for running probes).</li>
+through it (see TESTING.md for how to run probes).</li>
 </ul>
 </div></article></div>
   </main>
